@@ -1,81 +1,54 @@
 <?php include("start.php") ?>
 <?php include("navbar.php") ?>
 
-<section class="section">
-    <div class="container">
-        <h1 class="title">
-            Hello World
-        </h1>
-        <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-        </p>
-    </div>
-</section>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/index.css">
+<script src="js/swiper.min.js"></script>
 
-<section class="section">
-    <div class="container">
-        <h1 class="title">
-            Hello World
-        </h1>
-        <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-        </p>
-    </div>
-</section>
+<style>
 
-<section class="section">
-    <div class="container">
-        <h1 class="title">
-            Hello World
-        </h1>
-        <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-        </p>
-    </div>
-</section>
+</style>
 
-<section class="section">
+<div class="swiper-section">
     <div class="container">
-        <h1 class="title">
-            Hello World
-        </h1>
-        <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-        </p>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Advertisement 1</div>
+                <div class="swiper-slide">Advertisement 2</div>
+                <div class="swiper-slide">Advertisement 3</div>
+                <div class="swiper-slide">Advertisement 1</div>
+                <div class="swiper-slide">Advertisement 2</div>
+                <div class="swiper-slide">Advertisement 3</div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next is-hidden-mobile"><i class="fas fa-chevron-right fa-3x"></i></div>
+            <div class="swiper-button-prev is-hidden-mobile"><i class="fas fa-chevron-left fa-3x"></i></div>
+        </div>
     </div>
-</section>
+</div>
 
-<section class="section">
-    <div class="container">
-        <h1 class="title">
-            Hello World
-        </h1>
-        <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-        </p>
-    </div>
-</section>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 0,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        loop: true,
+    });
 
-<section class="section">
-    <div class="container">
-        <h1 class="title">
-            Hello World
-        </h1>
-        <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-        </p>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <h1 class="title">
-            Hello World
-        </h1>
-        <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-        </p>
-    </div>
-</section>
+</script>
 
 <?php include("end.php") ?>
