@@ -16,7 +16,7 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <div class="navbar-item has-dropdown">
+                <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link kategori">
                         <i class="fas fa-list-ul fa-lg"></i>
                         Kategori
