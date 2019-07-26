@@ -1,7 +1,35 @@
-.logo {
-    margin-right: 30px;
+.kategori span .fa-list-ul {
+    margin-right: 10px;
+    color: hsl(48, 100%, 67%);
 }
 
-.kategori .fa-list-ul {
-    margin-right: 10px;
+.cart, .notif {
+    align-items: center;
+    display: flex;
+}
+
+.mobile-view {
+    margin-left: auto;
+}
+
+.navbar-burger {
+    margin-left: 0;
+}
+
+a.navbar-item + a.navbar-item {
+    border-top: 1px solid #f5f5f5;
+}
+
+.navbar-item img {
+    max-height: 48px;
+}
+
+.cart-img {
+    padding: .3rem;
+    display: inline-block;
+}
+
+.cart-detail {
+    padding: .3rem;
+    width: 100%;
 }
