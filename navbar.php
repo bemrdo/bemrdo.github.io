@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="css/layout.css">
-<link href="css/bulma-badge/dist/css/bulma-badge.min.css" rel="stylesheet">
+<link href="css/bulma-badge.min.css" rel="stylesheet">
 
 <nav class="navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
     <div class="container">
