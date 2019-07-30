@@ -39,13 +39,13 @@ a.navbar-item + a.navbar-item {
 }
 
 .cart-img {
-    padding: .3rem;
+    padding: 8px;
     display: inline-block;
 }
 
 .cart-detail {
     position: relative;
-    padding: .3rem;
+    padding: 8px;
     width: 88%;
 }
 
@@ -63,14 +63,12 @@ a.navbar-item + a.navbar-item {
 }
 
 .navbar-dropdown a.navbar-item span.cart-detail span.cart-name {
-    font-weight: bold;
     max-width: 15em;
     padding-right: 0;
 }
 
 .navbar-dropdown a.navbar-item span.cart-detail span.cart-cost {
-    color: #e84118;
-    font-weight: bold;
+    color: #e84118;;
 }
 
 .navbar-dropdown a.navbar-item span.cart-detail span.cart-cost span.cart-item {
