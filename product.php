@@ -1,5 +1,5 @@
-<div class="column is-narrow is-half-mobile">
-    <div class="card product ">
+<div class="column is-narrow is-half-mobile product-column">
+    <div class="card product">
         <a href="#">
             <div class="card-image">
                 <figure class="image is-square">
@@ -30,7 +30,7 @@
             <a href="#" class="product-button">
                 <p class="is-warning is-size-6">
                     Detail
-                <p>
+                </p>
             </a>
         </a>
     </div>

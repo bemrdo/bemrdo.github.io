@@ -1,5 +1,7 @@
 .product {
-    max-width: 205px;
+    max-width: 206px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .product-content {
@@ -14,7 +16,7 @@
     margin-right: 10px;
 }
 
-.column {
+.product-column {
     padding: 15px 10px;
 }
 
@@ -49,7 +51,7 @@ p.product-price {
 }
 
 .product:hover .product-button {
-    display: block
+    display: block;
 }
 
 .card:hover {
