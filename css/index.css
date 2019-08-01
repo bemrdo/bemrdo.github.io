@@ -44,8 +44,13 @@ body {
     margin-bottom: 5px;
 }
 
-
-
 .product-section {
     padding-top: 1rem;
+}
+
+.load-more {
+    margin-bottom: 1.5rem !important;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
 }

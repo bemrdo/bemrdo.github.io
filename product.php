@@ -29,7 +29,7 @@
             </div>
             <a href="#" class="product-button">
                 <p class="is-warning is-size-6">
-                    Detail
+                    Lihat Detail
                 </p>
             </a>
         </a>

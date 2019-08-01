@@ -44,5 +44,4 @@
         slidesPerView: 1,
         loop: true,
     });
-
 </script>

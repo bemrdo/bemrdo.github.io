@@ -36,7 +36,7 @@
             <div class="navbar-start">
                 <div class="navbar-item search">
                     <div class="control has-icons-left">
-                        <input type="text" placeholder="Saya ingin mencari" class="is-info input is-transparent">
+                        <input type="text is-info is-outlined" placeholder="Saya ingin mencari" class="is-info input is-transparent">
                         <span class="icon is-left">
                             <i class="fa fa-search"></i>
                         </span>
@@ -45,9 +45,9 @@
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link kategori">
                         <span>
-                            <i class="fas fa-list-ul fa-lg"></i>
+                            <i class="far fa-stream fa-lg has-text-warning"></i>
                         </span>
-                        Kategori
+                        <strong class="is-size-5">Kategori</strong>
                     </a>
 
                     <div class="navbar-dropdown">
@@ -223,19 +223,45 @@
 
                 <div class="navbar-item">
                     <div class="buttons is-centered">
-                        <a class="button is-warning">
+                        <a class="button is-warning modal-button" data-target="modalSign">
                             <strong>Sign up</strong>
                         </a>
-                        <a class="button is-link">
+                        <div class="modal" id="modalSign">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Sign Up</p>
+                                    <button class="delete close-modal" aria-label="close" data-modal-id="#modalLogin"></button>
+                                </header>
+                                <section class="modal-card-body">
+                                    <!-- Content ... -->
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="button">Cancel</button>
+                                </footer>
+                            </div>
+                        </div>
+                        <a class="button is-link modal-button" data-target="modalLogin">
                             Log in
                         </a>
+                        <div class="modal" id="modalLogin">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Login</p>
+                                    <button class="delete close-modal" aria-label="close" data-modal-id="#modalLogin"></button>
+                                </header>
+                                <section class="modal-card-body">
+                                    <!-- Content ... -->
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="button">Cancel</button>
+                                </footer>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </nav>
-
-<script>
-
-</script>

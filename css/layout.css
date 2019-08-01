@@ -1,3 +1,39 @@
+@font-face {
+    font-family: QuickSand;
+    src: url(../fonts/QuickSand/Quicksand-Regular.ttf);
+}
+
+@font-face {
+    font-family: QuickSand;
+    src: url(../fonts/QuickSand/Quicksand-Bold.ttf);
+    font-weight: 700
+}
+
+@font-face {
+    font-family: QuickSand;
+    src: url(../fonts/QuickSand/Quicksand-Light.ttf);
+    font-weight: 300
+}
+
+body {
+    font-family: Quicksand, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+    font-weight: 400;
+    color: #555761;
+    position: relative;
+    z-index: 10000000
+}
+
+button, input, select, textarea {
+    font-family: Quicksand, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+}
+
+/* Header */
+
+[data-badge]::after {
+    box-shadow: 0 0 0 2px #fff !important;
+}
+
+
 .navbar-brand a.navbar-item {
     font-weight: bold;
 }
@@ -11,7 +47,7 @@
     line-height: .8rem;
 }
 
-.kategori span .fa-list-ul {
+.kategori span .fa-stream {
     margin-right: 10px;
     color: hsl(48, 100%, 67%);
 }
@@ -90,4 +126,28 @@ a.navbar-item + a.navbar-item {
 
 .navbar-dropdown .cart-button {
     padding-right: 8px;
+}
+
+/* Footer */
+
+.footer {
+    padding-bottom: 1rem;
+}
+
+.footer-padding {
+    padding-bottom: 1.5rem;
+}
+
+.footer-padding a.subtitle {
+    line-height: 1.75;
+}
+
+.footer-padding a.subtitle > i {
+    margin-right: 6px;
+}
+
+.footer-hr {
+    background-color: hsl(0, 0%, 21%);
+    height: 3px;
+    margin-bottom: 1rem
 }

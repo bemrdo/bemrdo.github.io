@@ -10,6 +10,7 @@
 </style>
 
 <?php include("advertisement.php") ?>
+
 <section class="section search-section">
     <div class="container">
         <div class="search-popular">
@@ -67,5 +68,18 @@
         </div>
     </div>
 </section>
+<section class="section is-paddingless">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-one-third">
+                <div class="button is-shaddowless is-info load-more title is-size-5">
+                    Tampilkan Lebih Banyak
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php include("footer.php") ?>
 
 <?php include("end.php") ?>
