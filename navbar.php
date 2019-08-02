@@ -79,34 +79,56 @@
 
                     <div class="navbar-dropdown is-right">
                         <div class="cart-wrapper">
+
                             <a href="#" class="navbar-item cart-dropdown is-paddingless">
                                 <img src="https://bulma.io/images/placeholders/128x128.png">
-                                <div class="cart-name break-word">
-                                    Nama Product disini panjang ini lebih panjang lagi
-                                </div>
-                                <p class="cart-var">
-                                    Variasi: putih
+                                <p class="cart-name">
+                                    <span>
+                                        Nama Product disini panjang ini lebih panjang lagi
+                                    </span>
+                                    <br>
+                                    <span class="cart-var">
+                                        Variasi: putih hitam belang
+                                    </span>
                                 </p>
                                 <p class="cart-item">
-                                    2 buah
-                                </p>
-                                <p class="cart-cost is-pulled-right">
-                                    Rp. 120.000.000
+                                    <span class="cart-stock-ready">
+                                        Stock Tersedia
+                                    </span>
+                                    <br>
+                                    <span class="cart-cost">
+                                        Rp. 120.000.000
+                                    </span>
+                                    <br>
+                                    <span>
+                                        2 barang
+                                    </span>
                                 </p>
                             </a>
+
                             <a href="#" class="navbar-item cart-dropdown is-paddingless">
                                 <img src="https://bulma.io/images/placeholders/128x128.png">
-                                <p class="cart-name break-word">
-                                    Nama Product disini panjang ini lebih panjang lagi
-                                </p>
-                                <p class="cart-var">
-                                    Variasi: putih
+                                <p class="cart-name">
+                                    <span>
+                                        Nama Product disini panjang ini lebih panjang lagi
+                                    </span>
+                                    <br>
+                                    <span class="cart-var">
+                                        Variasi: putih hitam belang
+                                    </span>
                                 </p>
                                 <p class="cart-item">
-                                    2 buah
-                                </p>
-                                <p class="cart-cost is-pulled-right">
-                                    Rp. 120.000.000.000
+                                    <span class="cart-stock-empty">
+                                        Stock Habis
+                                    </span>
+                                    <br>
+                                    <span class="cart-cost">
+                                        Rp. 120.000.000
+                                    </span>
+                                    <br>
+                                    <span>
+                                        2 barang
+                                    </span>
                                 </p>
                             </a>
 
@@ -149,6 +171,26 @@
 
                 <div class="navbar-item">
                     <div class="buttons is-centered">
+
+                        <a class="button is-link modal-button" data-target="modalLogin">
+                            <strong>Log in</strong>
+                        </a>
+                        <div class="modal" id="modalLogin">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Login</p>
+                                    <button class="delete close-modal" aria-label="close" data-modal-id="#modalLogin"></button>
+                                </header>
+                                <section class="modal-card-body">
+                                    <!-- Content ... -->
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="button">Cancel</button>
+                                </footer>
+                            </div>
+                        </div>
+
                         <a class="button is-warning modal-button" data-target="modalSign">
                             <strong>Sign up</strong>
                         </a>
@@ -167,24 +209,7 @@
                                 </footer>
                             </div>
                         </div>
-                        <a class="button is-link modal-button" data-target="modalLogin">
-                            Log in
-                        </a>
-                        <div class="modal" id="modalLogin">
-                            <div class="modal-background"></div>
-                            <div class="modal-card">
-                                <header class="modal-card-head">
-                                    <p class="modal-card-title">Login</p>
-                                    <button class="delete close-modal" aria-label="close" data-modal-id="#modalLogin"></button>
-                                </header>
-                                <section class="modal-card-body">
-                                    <!-- Content ... -->
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <button class="button">Cancel</button>
-                                </footer>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
