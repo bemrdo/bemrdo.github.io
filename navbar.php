@@ -78,121 +78,47 @@
                     </a>
 
                     <div class="navbar-dropdown is-right">
-
-                        <a class="navbar-item is-paddingless">
-                            <span class="cart-img">
-                                <figure class="image">
-                                    <img src="https://bulma.io/images/placeholders/48x48.png">
-                                </figure>
-                            </span>
-                            <span class="cart-detail columns">
-                                <span class="column is-two-thirds cart-name break-word">
-                                    Nama Product disini panjang ini lebih panjang lagi<br>
-                                    <span class="cart-var">
-                                        Variasi: putih
-                                    </span>
-                                </span>
-                                <span class="column cart-cost">
-                                    IDR. 120.000<br>
-                                    <span class="cart-item">
-                                        2 buah
-                                    </span>
-                                </span>
-                            </span>
-                        </a>
-                        <a class="navbar-item is-paddingless">
-                            <span class="cart-img">
-                                <figure class="image">
-                                    <img src="https://bulma.io/images/placeholders/48x48.png">
-                                </figure>
-                            </span>
-                            <span class="cart-detail columns">
-                                <span class="column is-two-thirds cart-name break-word">
-                                    Nama Product disini panjang ini lebih panjang lagi<br>
-                                    <span class="cart-var">
-                                        Variasi: putih
-                                    </span>
-                                </span>
-                                <span class="column cart-cost">
-                                    IDR. 120.000<br>
-                                    <span class="cart-item">
-                                        2 buah
-                                    </span>
-                                </span>
-                            </span>
-                        </a>
-                        <a class="navbar-item is-paddingless">
-                            <span class="cart-img">
-                                <figure class="image">
-                                    <img src="https://bulma.io/images/placeholders/48x48.png">
-                                </figure>
-                            </span>
-                            <span class="cart-detail columns">
-                                <span class="column is-two-thirds cart-name break-word">
-                                    Nama Product disini panjang ini lebih panjang lagi<br>
-                                    <span class="cart-var">
-                                        Variasi: putih
-                                    </span>
-                                </span>
-                                <span class="column cart-cost">
-                                    IDR. 120.000<br>
-                                    <span class="cart-item">
-                                        2 buah
-                                    </span>
-                                </span>
-                            </span>
-                        </a>
-                        <a class="navbar-item is-paddingless">
-                            <span class="cart-img">
-                                <figure class="image">
-                                    <img src="https://bulma.io/images/placeholders/48x48.png">
-                                </figure>
-                            </span>
-                            <span class="cart-detail columns">
-                                <span class="column is-two-thirds cart-name break-word">
-                                    Nama Product disini panjang ini lebih panjang lagi<br>
-                                    <span class="cart-var">
-                                        Variasi: putih
-                                    </span>
-                                </span>
-                                <span class="column cart-cost">
-                                    IDR. 120.000<br>
-                                    <span class="cart-item">
-                                        2 buah
-                                    </span>
-                                </span>
-                            </span>
-                        </a>
-                        <a class="navbar-item is-paddingless">
-                            <span class="cart-img">
-                                <figure class="image">
-                                    <img src="https://bulma.io/images/placeholders/48x48.png">
-                                </figure>
-                            </span>
-                            <span class="cart-detail columns">
-                                <span class="column is-two-thirds cart-name break-word">
-                                    Nama Product disini panjang ini lebih panjang lagi<br>
-                                    <span class="cart-var">
-                                        Variasi: putih
-                                    </span>
-                                </span>
-                                <span class="column cart-cost">
-                                    IDR. 120.000<br>
-                                    <span class="cart-item">
-                                        2 buah
-                                    </span>
-                                </span>
-                            </span>
-                        </a>
-
-                        <hr class="navbar-divider">
-                        <div class="cart-total has-text-dark is-size-7">
-                            Total: <b>5 produk</b>
-                        </div>
-                        <div class="buttons cart-button is-pulled-right">
-                            <a class="button is-warning is-size-7">
-                                Tampilkan keranjang belanja
+                        <div class="cart-wrapper">
+                            <a href="#" class="navbar-item cart-dropdown is-paddingless">
+                                <img src="https://bulma.io/images/placeholders/128x128.png">
+                                <div class="cart-name break-word">
+                                    Nama Product disini panjang ini lebih panjang lagi
+                                </div>
+                                <p class="cart-var">
+                                    Variasi: putih
+                                </p>
+                                <p class="cart-item">
+                                    2 buah
+                                </p>
+                                <p class="cart-cost is-pulled-right">
+                                    Rp. 120.000.000
+                                </p>
                             </a>
+                            <a href="#" class="navbar-item cart-dropdown is-paddingless">
+                                <img src="https://bulma.io/images/placeholders/128x128.png">
+                                <p class="cart-name break-word">
+                                    Nama Product disini panjang ini lebih panjang lagi
+                                </p>
+                                <p class="cart-var">
+                                    Variasi: putih
+                                </p>
+                                <p class="cart-item">
+                                    2 buah
+                                </p>
+                                <p class="cart-cost is-pulled-right">
+                                    Rp. 120.000.000.000
+                                </p>
+                            </a>
+
+                            <hr class="navbar-divider">
+                            <div class="cart-total has-text-dark is-size-7">
+                                Total: <b>5 produk</b>
+                            </div>
+                            <div class="buttons cart-button is-pulled-right">
+                                <a class="button is-warning is-size-7">
+                                    Tampilkan keranjang belanja
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
