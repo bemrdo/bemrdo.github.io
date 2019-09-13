@@ -35,16 +35,16 @@
                 <p class="title is-size-5-mobile is-size-4-tablet">Hubungi Kami</p>
                 <ul>
                     <li>
-                        <a href="#" class="subtitle is-size-6"><i class="far fa-envelope"></i>info@dewatabalielektrik.com</a>
+                        <p class="subtitle is-size-6"><i class="far fa-envelope"></i>info@dewatabalielektrik.com</p>
                     </li>
                     <li>
-                        <a href="#" class="subtitle is-size-6"><i class="far fa-phone"></i>(0361) 8491650</a>
+                        <p class="subtitle is-size-6"><i class="far fa-phone"></i>(0361) 8491650</p>
                     </li>
                     <li>
-                        <a href="#" class="subtitle is-size-6"><i class="far fa-calendar-alt"></i> Setiap Hari <span class="is-size-7">(kecuali hari libur nasional)</span></a>
+                        <p class="subtitle is-size-6"><i class="far fa-calendar-alt"></i> Setiap Hari <span class="is-size-7">(kecuali hari libur nasional)</span></p>
                     </li>
                     <li>
-                        <a href="#" class="subtitle is-size-6"><i class="far fa-clock"></i>08.00 WITA - 18.00 WITA</a>
+                        <p class="subtitle is-size-6"><i class="far fa-clock"></i>08.00 WITA - 18.00 WITA</p>
                     </li>
                 </ul>
                 <br>

@@ -183,19 +183,7 @@
                             <strong>Daftar</strong>
                         </a>
                         <div class="modal" id="modalSign">
-                            <div class="modal-background"></div>
-                            <div class="modal-card">
-                                <header class="modal-card-head has-background-info">
-                                    <p class="modal-card-title">Sign Up</p>
-                                    <button class="delete close-modal" aria-label="close" data-modal-id="#modalLogin"></button>
-                                </header>
-                                <section class="modal-card-body has-background-info">
-                                    <!-- Content ... -->
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <button class="button">Cancel</button>
-                                </footer>
-                            </div>
+                            <?php include('signup.php') ?>
                         </div>
 
                     </div>

@@ -152,6 +152,13 @@ a.navbar-item + a.navbar-item {
 .footer-padding a.subtitle > i {
     margin-right: 6px;
 }
+.footer-padding p.subtitle {
+    line-height: 1.75;
+}
+
+.footer-padding p.subtitle > i {
+    margin-right: 6px;
+}
 
 .footer-hr {
     background-color: hsl(0, 0%, 21%);
@@ -179,21 +186,34 @@ a.navbar-item + a.navbar-item {
     margin: 0 8px;
 }
 
-.login {
+.login, .signup {
     width: 400px;
 }
 
-.login .padding-button {
+.login .padding-button, .signup .padding-button {
     position: absolute;
     right: 10px;
 }
 
-.login header.modal-card-head {
+.login header.modal-card-head, .signup header.modal-card-head {
     border-bottom: none;
 }
 
-.login footer.modal-card-foot {
+.login footer.modal-card-foot, .signup footer.modal-card-foot {
     border-top: none;
     padding-top: 0;
     display: block;
+}
+
+a#open-login.button.is-button-fool, a#open-sign.button.is-button-fool {
+    border: 0;
+    padding: 0;
+    display: inherit;
+    color: #3273dc;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a#open-login.button.is-button-fool:hover, a#open-sign.button.is-button-fool:hover {
+    color: #363636;
 }
