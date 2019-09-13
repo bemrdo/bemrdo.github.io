@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="css/swiper.min.css">
-<link rel="stylesheet" href="css/advertisement.css">
+<link rel="stylesheet" href="../css/swiper.min.css">
+<link rel="stylesheet" href="../css/advertisement.css">
 
 <div class="swiper-section">
     <div class="container">

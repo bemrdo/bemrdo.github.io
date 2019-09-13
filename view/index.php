@@ -1,9 +1,9 @@
 <?php include("start.php") ?>
 <?php include("navbar.php") ?>
 
-<link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/product.css">
-<script src="js/swiper.min.js"></script>
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/product.css">
+<script src="../js/swiper.min.js"></script>
 
 <style>
 

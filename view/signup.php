@@ -50,12 +50,12 @@
             <div class="field is-pulled-left">
                 <div class="control">
                     <label class="checkbox">
-                        <input type="checkbox" name="remember">
+                        <input type="checkbox" name="tcagree" id="tc-agree" checked>
                         <span class="has-text-dark is-size-7">Saya setuju dengan <a href="#">Syarat dan Ketentuan</a> serta <a href="">Kebijakan Privasi</a> PT. Dewata Bali Elektrik</span>
                     </label>
                 </div>
             </div>
-            <button id="login-form" class="button is-warning has-text-centered is-fullwidth"><strong>Daftar</strong></button>
+            <button id="signup-form" class="button is-warning has-text-centered is-fullwidth"><strong>Daftar</strong></button>
         </form>
     </section>
 
@@ -71,6 +71,9 @@
         $("#open-login").click(function() {
             $("#modalLogin").addClass("is-active");
         });
+    });
+    $('#tc-agree').change(function() {
+        $('#signup-form').attr('disabled',!this.checked)
     });
 </script>
 

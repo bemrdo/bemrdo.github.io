@@ -66,5 +66,5 @@
     <p class="has-text-centered is-size-6">Copyright © 2019 PT. Dewata Bali Elektrik</p>
 </footer>
 
-<script src="js/map.js"></script>
+<script src="../js/map.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF9BOyzOCk8jVFsQ9z1qhxzt3t35z0AR4&callback=initMap"></script>

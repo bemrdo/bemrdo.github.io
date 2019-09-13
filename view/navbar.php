@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="css/layout.css">
-<link href="css/bulma-badge.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/layout.css">
+<link href="../css/bulma-badge.min.css" rel="stylesheet">
 
 <nav class="navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand logo">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="image/logo-white.png">
+            <a class="navbar-item" href="#">
+                <img src="../image/logo-white.png">
                 <span class="logo-name is-size-7">
                     Dewata<br>Bali<br>Elektrik
                 </span>
