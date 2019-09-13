@@ -67,12 +67,10 @@
 </div>
 
 <script type="text/javascript">
-
     $(function() {
         $("#open-login").click(function() {
             $("#modalLogin").addClass("is-active");
         });
     });
-
 </script>
 
