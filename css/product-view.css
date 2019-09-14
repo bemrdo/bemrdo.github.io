@@ -1,6 +1,7 @@
 .product-path {
     display: flex;
     margin-top: 2rem;
+    margin-bottom: 1rem;
     font-size: 14px;
 }
 
@@ -15,6 +16,3 @@
     overflow: visible;
 }
 
-.product-thumb-image {
-    max-width: 100px;
-}
