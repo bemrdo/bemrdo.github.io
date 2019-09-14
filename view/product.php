@@ -1,6 +1,6 @@
 <div class="column is-narrow is-half-mobile product-column">
     <div class="card product">
-        <a href="#">
+        <a href="product-view.php">
             <div class="card-image">
                 <figure class="image is-square">
                     <img src="https://bulma.io/images/placeholders/256x256.png" alt="Placeholder image">

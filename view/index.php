@@ -5,10 +5,6 @@
 <link rel="stylesheet" href="../css/product.css">
 <script src="../js/swiper.min.js"></script>
 
-<style>
-
-</style>
-
 <?php include("advertisement.php") ?>
 
 <section class="section search-section">

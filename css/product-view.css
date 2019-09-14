@@ -1,0 +1,20 @@
+.product-path {
+    display: flex;
+    margin-top: 2rem;
+    font-size: 14px;
+}
+
+.path-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 15ch;
+    white-space: nowrap;
+}
+
+.path-name:hover {
+    overflow: visible;
+}
+
+.product-thumb-image {
+    max-width: 100px;
+}

@@ -4,7 +4,7 @@
 <nav class="navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand logo">
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="/si_toko_user/view/">
                 <img src="../image/logo-white.png">
                 <span class="logo-name is-size-7">
                     Dewata<br>Bali<br>Elektrik
