@@ -22,7 +22,7 @@
         <div class="columns">
             <div class="column is-one-third product-image">
                 <div class="main-image">
-                    <img src="../image/product/pkg1.jpg" id="currentImg" alt="Image Product" title="pkg1">
+                    <img src="../image/product/pkg1.jpg" id="currentImg" alt="Image Product" title="pkg1" onmouseover="zoomImgin()" onmouseout="zoomImgout()">
                 </div>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -59,7 +59,7 @@
                 </div>
                 <div class="is-size-6 product-stock is-paddingless">
                     <p>
-                        <strong>88</strong> Terjual &nbsp; &#124; &nbsp;<strong>3</strong> Terpesan dari <strong>4</strong> Tersedia &nbsp;<span class="has-text-centered tooltip is-tooltip-warning is-tooltip-right is-tooltip-left-mobile is-tooltip-multiline" data-tooltip="Terjual adalah jumlah barang yang telah sukses terjual. Terpesan adalah jumlah barang yang saat ini terpesan (batas 24 jam sejak dipesan) dari stok barang yang Tersedia saat ini."><i class="fa fa-info-circle"></i></span>&nbsp;
+                        <span class="is-hidden-touch is-hidden-desktop-only"><strong>88</strong> Terjual &nbsp; &#124; &nbsp;</span><span class="is-hidden-widescreen"><strong>88</strong> Terjual<br></span><strong>3</strong> Terpesan dari <strong>4</strong> Tersedia &nbsp;<span class="has-text-centered tooltip is-tooltip-warning is-tooltip-right is-tooltip-left-mobile is-tooltip-multiline" data-tooltip="Terjual adalah jumlah barang yang telah sukses terjual. Terpesan adalah jumlah barang yang saat ini terpesan (batas 24 jam sejak dipesan) dari stok barang yang Tersedia saat ini."><i class="fa fa-info-circle"></i></span>&nbsp;
                         <span>
                             <a class="button is-small is-info is-outlined btn-copy is-pulled-right" onclick="copyTC('#url')">
                                 <span class="icon is-small">
@@ -76,6 +76,44 @@
     </div>
 </section>
 
+<!-- Loupe Zoom -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.loupe.js"></script>
+<script type="text/javascript" src="../js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.2.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/jquery.loupe.css" />
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#currentImg').loupe({
+            'default_zoom': 100,
+            'max_size' : 600,
+            'default_size' : 200,
+            'loupe_toggle_time' : 'fast',
+        });
+    });
+    function zoomImgin() {
+        //$('#loupe-0').remove();
+        //$('#loupe_overlay-0').remove();
+        $('#currentImg').loupe({
+            'default_zoom': 100,
+            'max_size' : 600,
+            'default_size' : 200,
+            'loupe_toggle_time' : 'fast',
+        });
+    }
+    function zoomImgouts() {
+        var elem = document.getElementById('loupe-0');
+        elem.parentNode.removeChild(elem);
+        return false;
+    }
+    /*function zoomImgout() {
+        document.getElementById('loupe-0').remove();
+        document.getElementById('loupe_overlay-0').remove();
+    }*/
+</script>
+
 <!-- SweetAlert2 -->
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.17.1/dist/sweetalert2.all.min.js"></script>
@@ -91,9 +129,9 @@
         Swal.fire({
             //position: 'top-end',
             type: 'success',
-            title: 'Your work has been saved',
+            title: 'Link berhasil disalin',
             showConfirmButton: false,
-            timer: 1000
+            timer: 1500
         })
     }
 
