@@ -11,7 +11,7 @@
     <div class="container">
         <div class="search-popular">
             <div class="columns is-vcentered is-centered is-mobile is-multiline search-padding">
-                <div class="column is-narrow search-title is-paddingless">
+                <div class="column is-narrow search-title is-paddingless is-full-mobile has-text-centered">
                     <p>Pencarian Populer</p>
                 </div>
                 <div class="column is-narrow is-paddingless">
@@ -28,6 +28,12 @@
                 </div>
                 <div class="column is-narrow is-paddingless">
                     <a href="#" class="search-item has-text-dark is-size-7">Setrika Uap</a>
+                </div>
+                <div class="column is-narrow is-paddingless">
+                    <a href="#" class="search-item has-text-dark is-size-7">Saklar Tiga</a>
+                </div>
+                <div class="column is-narrow is-paddingless">
+                    <a href="#" class="search-item has-text-dark is-size-7">Cuk Roll</a>
                 </div>
                 <div class="column is-narrow is-paddingless">
                     <a href="#" class="search-item has-text-dark is-size-7">Saklar Tiga</a>

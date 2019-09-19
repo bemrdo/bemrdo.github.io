@@ -71,6 +71,11 @@
                         </span>
                     </p>
                 </div>
+                <div class="title is-size-4 is-danger">
+                    <strong>
+                        <p class="product-cost">Rp. 120.000</p>
+                    </strong>
+                </div>
             </div>
         </div>
     </div>

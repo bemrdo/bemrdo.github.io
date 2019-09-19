@@ -94,8 +94,9 @@
 .tooltip.is-tooltip-multiline::before {
     min-width: 15rem !important;
 }
-/* order */
-
-
 
 /* detail */
+
+.product-cost {
+    color: #ff502f;
+}
