@@ -7,7 +7,17 @@
 <link rel="stylesheet" href="../css/bulma-tooltip.min.css">
 
 <style>
-
+    input[type="number"] {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+        text-align: center;
+        font-weight: bold;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
 </style>
 
 <section class="section">
@@ -20,10 +30,11 @@
             <p class="path-name">Nama Product tidak bisa diklik</p>
         </div>
         <div class="columns is-centered">
-            <div class="column is-one-third product-image">
+            <div class="column is-two-fifths product-image">
                 <div class="main-image">
                     <img src="../image/product/pkg1.jpg" id="currentImg" alt="Image Product"  onmouseover="zoomImgin()" onmouseout="zoomImgout()">
                 </div>
+                <!--
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -43,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add Arrows -->
+                <!-- Add Arrows
                 <div class="arrow-container">
                     <div class="swiper-button-next is-pulled-right">
                         <i class="fas fa-chevron-right fa-lg"></i>
@@ -52,16 +63,17 @@
                         <i class="fas fa-chevron-left fa-lg"></i>
                     </div>
                 </div>
+                -->
             </div>
-            <div class="column is-two-fifths product-order">
-                <div class="title is-size-3">
-                    <p>Nama Product panjang disini panjang sekali</p>
+            <div class="column is-three-fifths product-order">
+                <div class="title is-size-4-touch is-size-3-desktop">
+                    <p>KABEL TIES 2.5 MM x 100 MM ISI 100 PUTIH WIPRO</p>
                 </div>
                 <div class="is-size-6 product-stock is-paddingless">
                     <p>
-                        <span class="is-hidden-touch is-hidden-desktop-only"><strong>88</strong> Terjual &nbsp; &#124; &nbsp;</span><span class="is-hidden-widescreen"><strong>88</strong> Terjual<br></span><strong>3</strong> Terpesan dari <strong>4</strong> Tersedia &nbsp;<span class="has-text-centered tooltip is-tooltip-warning is-tooltip-right is-tooltip-left-mobile is-tooltip-multiline" data-tooltip="Terjual adalah jumlah barang yang telah sukses terjual. Terpesan adalah jumlah barang yang saat ini terpesan (batas 24 jam sejak dipesan) dari stok barang yang Tersedia saat ini."><i class="fa fa-info-circle"></i></span>&nbsp;
+                        <span class="is-hidden-touch is-hidden-desktop-only"><strong>88</strong> Terjual &nbsp; &#124; &nbsp;</span><span class="is-hidden-widescreen"><strong>88</strong> Terjual<br></span><strong>3</strong> Terpesan dari <strong>4</strong> Tersedia &nbsp;<span class="has-text-centered tooltip is-tooltip-warning is-tooltip-bottom is-tooltip-multiline" data-tooltip="Terjual adalah jumlah barang yang telah sukses terjual. Terpesan adalah jumlah barang yang saat ini terpesan (batas 24 jam sejak dipesan) dari stok barang yang Tersedia saat ini."><i class="fa fa-info-circle"></i></span>&nbsp;
                         <span>
-                            <a class="button is-small is-info is-outlined btn-copy is-pulled-right" onclick="copyTC('#url')">
+                            <a class="button is-small is-info is-outlined btn-copy" onclick="copyTC('#url')">
                                 <span class="icon is-small">
                                     <i class="fas fa-link"></i>
                                 </span>
@@ -71,10 +83,36 @@
                         </span>
                     </p>
                 </div>
-                <div class="title is-size-4 is-danger">
+                <div class="title is-size-4-touch is-size-3-desktop is-marginless">
                     <strong>
                         <p class="product-cost">Rp. 120.000</p>
                     </strong>
+                </div>
+                <div class="columns is-mobile is-paddingless">
+                    <div class="column">
+                        <p>Jumlah</p>
+                        <div class="field has-addons">
+                            <div class="control">
+                                <button class="button is-info" onclick="document.querySelector('#item-count').stepDown()">
+                                    <i class="far fa-minus"></i>
+                                </button>
+                            </div>
+                            <div class="control">
+                                <input class="input is-info is-outlined" type="number" min="1" max="9" step="1" value="1" id="item-count">
+                            </div>
+                            <div class="control">
+                                <button class="button is-info" onclick="document.querySelector('#item-count').stepUp()">
+                                    <i class="far fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p>Satuan</p>
+                    </div>
+                    <div class="column">
+                        <p>Satuan</p>
+                    </div>
                 </div>
             </div>
         </div>
