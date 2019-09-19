@@ -22,33 +22,33 @@
         <div class="columns">
             <div class="column is-one-third product-image">
                 <div class="main-image">
-                    <img src="../image/product/pkg1.jpg" id="currentImg" alt="Image Product" title="pkg1" onmouseover="zoomImgin()" onmouseout="zoomImgout()">
+                    <img src="../image/product/pkg1.jpg" id="currentImg" alt="Image Product"  onmouseover="zoomImgin()" onmouseout="zoomImgout()">
                 </div>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="../image/product/pkg1.jpg" onclick="showImage('../image/product/pkg1.jpg','pkg1');" data-pin-nopin="true">
+                            <img src="../image/product/pkg1.jpg" id="thumbImg-1" onclick="showImage('../image/product/pkg1.jpg','thumbImg-1');" data-pin-nopin="true">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../image/product/pkg2.jpg" onclick="showImage('../image/product/pkg2.jpg','pkg2');" data-pin-nopin="true">
+                            <img src="../image/product/pkg2.jpg" id="thumbImg-2" onclick="showImage('../image/product/pkg2.jpg','thumbImg-2');" data-pin-nopin="true">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../image/product/pkg3.jpg" onclick="showImage('../image/product/pkg3.jpg','pkg3');" data-pin-nopin="true">
+                            <img src="../image/product/pkg3.jpg" id="thumbImg-3" onclick="showImage('../image/product/pkg3.jpg','thumbImg-3');" data-pin-nopin="true">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../image/product/pkg4.jpg" onclick="showImage('../image/product/pkg4.jpg','pkg4');" data-pin-nopin="true">
+                            <img src="../image/product/pkg4.jpg" id="thumbImg-4" onclick="showImage('../image/product/pkg4.jpg','thumbImg-4');" data-pin-nopin="true">
                         </div>
                         <div class="swiper-slide">
-                            <img src="../image/product/pkg5.jpg" onclick="showImage('../image/product/pkg5.jpg','pkg5');" data-pin-nopin="true">
+                            <img src="../image/product/pkg5.jpg" id="thumbImg-5" onclick="showImage('../image/product/pkg5.jpg','thumbImg-5');" data-pin-nopin="true">
                         </div>
                     </div>
                 </div>
                 <!-- Add Arrows -->
                 <div class="arrow-container">
-                    <div class="swiper-button-next is-hidden-mobile is-pulled-right">
+                    <div class="swiper-button-next is-pulled-right">
                         <i class="fas fa-chevron-right fa-lg"></i>
                     </div>
-                    <div class="swiper-button-prev is-hidden-mobile">
+                    <div class="swiper-button-prev">
                         <i class="fas fa-chevron-left fa-lg"></i>
                     </div>
                 </div>
@@ -142,13 +142,40 @@
 <script src="../js/swiper.min.js"></script>
 
 <script type="text/javascript">
-    function showImage(imgPath, imgText) {
+    function showImage(imgPath, imgId) {
         var curImage = document.getElementById('currentImg');
-
         curImage.src = imgPath;
-        curImage.alt = imgText;
-        curImage.title = imgText;
+
+        //var disactiveImage = document.getElementById('thumbImage-1');
+        //disactiveImage.style = 'border: 0px solid black;';
+
+        //var activeImage = document.getElementById(imgId);
+        //activeImage.addClass('is-active');
+        //activeImage.style = 'border: 1px solid red;';
     }
+
+    $(function() {
+        $("#thumbImg-1").click(function() {
+            $(".border-show").removeClass("border-show")
+            $("#thumbImg-1").addClass("border-show");
+        });
+        $("#thumbImg-2").click(function() {
+            $(".border-show").removeClass("border-show")
+            $("#thumbImg-2").addClass("border-show");
+        });
+        $("#thumbImg-3").click(function() {
+            $(".border-show").removeClass("border-show")
+            $("#thumbImg-3").addClass("border-show");
+        });
+        $("#thumbImg-4").click(function() {
+            $(".border-show").removeClass("border-show")
+            $("#thumbImg-4").addClass("border-show");
+        });
+        $("#thumbImg-5").click(function() {
+            $(".border-show").removeClass("border-show")
+            $("#thumbImg-5").addClass("border-show");
+        });
+    });
 
     var swiper = new Swiper('.swiper-container', {
         spaceBetween: 4,
