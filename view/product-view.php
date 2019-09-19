@@ -19,7 +19,7 @@
             &nbsp;/&nbsp;
             <p class="path-name">Nama Product tidak bisa diklik</p>
         </div>
-        <div class="columns">
+        <div class="columns is-centered">
             <div class="column is-one-third product-image">
                 <div class="main-image">
                     <img src="../image/product/pkg1.jpg" id="currentImg" alt="Image Product"  onmouseover="zoomImgin()" onmouseout="zoomImgout()">
@@ -27,7 +27,7 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="../image/product/pkg1.jpg" id="thumbImg-1" onclick="showImage('../image/product/pkg1.jpg','thumbImg-1');" data-pin-nopin="true">
+                            <img class="border-show" src="../image/product/pkg1.jpg" id="thumbImg-1" onclick="showImage('../image/product/pkg1.jpg','thumbImg-1');" data-pin-nopin="true">
                         </div>
                         <div class="swiper-slide">
                             <img src="../image/product/pkg2.jpg" id="thumbImg-2" onclick="showImage('../image/product/pkg2.jpg','thumbImg-2');" data-pin-nopin="true">
@@ -145,13 +145,6 @@
     function showImage(imgPath, imgId) {
         var curImage = document.getElementById('currentImg');
         curImage.src = imgPath;
-
-        //var disactiveImage = document.getElementById('thumbImage-1');
-        //disactiveImage.style = 'border: 0px solid black;';
-
-        //var activeImage = document.getElementById(imgId);
-        //activeImage.addClass('is-active');
-        //activeImage.style = 'border: 1px solid red;';
     }
 
     $(function() {
