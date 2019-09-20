@@ -102,3 +102,22 @@
     margin-top: .8rem;
     margin-bottom: .8rem;
 }
+
+.product-total {
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    margin-right: .4rem;
+}
+
+.is-hpaddingright {
+    padding-right: 0;
+}
+
+.is-vpaddingless {
+    padding-top: 0;
+}
+
+.is-redcost {
+    background-color: #ff502f;
+    color: #fff;
+}

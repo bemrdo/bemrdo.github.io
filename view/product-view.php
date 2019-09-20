@@ -85,33 +85,59 @@
                 </div>
                 <div class="title is-size-4-touch is-size-3-desktop is-marginless">
                     <strong>
-                        <p class="product-cost">Rp. 120.000</p>
+                        <p class="product-cost"><?php echo "Rp. " . number_format("120000","0","",".")?><span class="is-size-5 has-text-dark"> / pack</span></p>
                     </strong>
                 </div>
-                <div class="columns is-mobile is-paddingless">
-                    <div class="column">
+                <div class="columns is-mobile is-vcentered">
+                    <div class="column is-narrow">
                         <p>Jumlah</p>
                         <div class="field has-addons">
                             <div class="control">
-                                <button class="button is-info" onclick="document.querySelector('#item-count').stepDown()">
+                                <button class="button is-warning" onclick="document.querySelector('#item-count').stepDown()">
                                     <i class="far fa-minus"></i>
                                 </button>
                             </div>
                             <div class="control">
-                                <input class="input is-info is-outlined" type="number" min="1" max="9" step="1" value="1" id="item-count">
+                                <input class="input is-warning is-outlined" type="number" min="1" max="9" step="1" value="1" id="item-count">
                             </div>
                             <div class="control">
-                                <button class="button is-info" onclick="document.querySelector('#item-count').stepUp()">
+                                <button class="button is-warning" onclick="document.querySelector('#item-count').stepUp()">
                                     <i class="far fa-plus"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="column">
-                        <p>Satuan</p>
+                    <div class="column is-narrow">
+                        <p>Total Harga</p>
+                        <div class="title is-size-5-touch is-size-4-desktop product-total">
+                            <p><?php echo "Rp. " . number_format("120000","0","",".")?></p>
+                        </div>
                     </div>
-                    <div class="column">
-                        <p>Satuan</p>
+                </div>
+                <div class="columns is-mobile">
+                    <div class="column is-vpaddingless is-hpaddingright is-narrow">
+                        <button class="button is-medium is-info">
+                            <strong>
+                                <p><i class="far fa-bookmark"></i>&nbsp; Wishlist</p>
+                            </strong>
+                        </button>
+                    </div>
+                    <div class="column is-vpaddingless is-narrow">
+                        <button class="button is-medium is-success">
+                            <strong>
+                                <p><i class="fas fa-cart-plus"></i>&nbsp; Pesan Sekarang</p>
+                            </strong>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="title is-size-5 is-marginless has-text-link">&nbsp; <i class="far fa-clipboard-list"></i>&nbsp; <strong>Informasi Produk:</strong></div>
+                    <hr class="has-background-link is-marginless">
+                    <div class="is-size-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores reiciendis vel nisi, expedita ex, aperiam illo explicabo adipisci, praesentium, incidunt sequi possimus aut error illum accusamus fugiat perferendis consequatur eaque.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores reiciendis vel nisi, expedita ex, aperiam illo explicabo adipisci, praesentium, incidunt sequi possimus aut error illum accusamus fugiat perferendis consequatur eaque.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores reiciendis vel nisi, expedita ex, aperiam illo explicabo adipisci, praesentium, incidunt sequi possimus aut error illum accusamus fugiat perferendis consequatur eaque.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores reiciendis vel nisi, expedita ex, aperiam illo explicabo adipisci, praesentium, incidunt sequi possimus aut error illum accusamus fugiat perferendis consequatur eaque.</p>
                     </div>
                 </div>
             </div>
