@@ -1,5 +1,10 @@
 /* swiper */
 
+.thumb-container {
+    position: relative;
+    width: 100%;
+}
+
 .swiper-container {
     width: 82%;
 }
@@ -25,7 +30,6 @@
 }
 
 .swiper-button-next, .swiper-button-prev {
-    transform: translateY(-100%);
     background-color: hsl(48, 100%, 67%);
     color: rgba(0, 0, 0, 0.7);
     height: 30px;
@@ -58,8 +62,9 @@
 }
 
 .arrow-container {
-    position: relative;
+    position: absolute;
     width: 100%;
+    top: 60%;
 }
 
 .swiper-slide img {
@@ -145,4 +150,9 @@
 
 .product-show:hover {
     opacity: 1;
+}
+
+.product-else {
+    margin-top: 2rem;
+    margin-bottom: .4rem;
 }

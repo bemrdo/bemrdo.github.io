@@ -14,10 +14,12 @@
         text-align: center;
         font-weight: bold;
     }
+
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
         -webkit-appearance: none;
     }
+
 </style>
 
 <section class="section">
@@ -32,38 +34,38 @@
         <div class="columns is-centered">
             <div class="column is-two-fifths product-image">
                 <div class="main-image">
-                    <img src="../image/product/pkg1.jpg" id="currentImg" alt="Image Product"  onmouseover="zoomImgin()" onmouseout="zoomImgout()">
+                    <img src="../image/product/pkg1.jpg" id="currentImg" alt="Image Product" onmouseover="zoomImgin()" onmouseout="zoomImgout()">
                 </div>
-                <!--
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="border-show" src="../image/product/pkg1.jpg" id="thumbImg-1" onclick="showImage('../image/product/pkg1.jpg','thumbImg-1');" data-pin-nopin="true">
+                <div class="thumb-container">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="border-show" src="../image/product/pkg1.jpg" id="thumbImg-1" onclick="showImage('../image/product/pkg1.jpg','thumbImg-1');" data-pin-nopin="true">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../image/product/pkg2.jpg" id="thumbImg-2" onclick="showImage('../image/product/pkg2.jpg','thumbImg-2');" data-pin-nopin="true">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../image/product/pkg3.jpg" id="thumbImg-3" onclick="showImage('../image/product/pkg3.jpg','thumbImg-3');" data-pin-nopin="true">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../image/product/pkg4.jpg" id="thumbImg-4" onclick="showImage('../image/product/pkg4.jpg','thumbImg-4');" data-pin-nopin="true">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../image/product/pkg5.jpg" id="thumbImg-5" onclick="showImage('../image/product/pkg5.jpg','thumbImg-5');" data-pin-nopin="true">
+                            </div>
                         </div>
-                        <div class="swiper-slide">
-                            <img src="../image/product/pkg2.jpg" id="thumbImg-2" onclick="showImage('../image/product/pkg2.jpg','thumbImg-2');" data-pin-nopin="true">
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="arrow-container">
+                        <div class="swiper-button-next is-pulled-right">
+                            <i class="fas fa-chevron-right fa-lg"></i>
                         </div>
-                        <div class="swiper-slide">
-                            <img src="../image/product/pkg3.jpg" id="thumbImg-3" onclick="showImage('../image/product/pkg3.jpg','thumbImg-3');" data-pin-nopin="true">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../image/product/pkg4.jpg" id="thumbImg-4" onclick="showImage('../image/product/pkg4.jpg','thumbImg-4');" data-pin-nopin="true">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../image/product/pkg5.jpg" id="thumbImg-5" onclick="showImage('../image/product/pkg5.jpg','thumbImg-5');" data-pin-nopin="true">
+                        <div class="swiper-button-prev">
+                            <i class="fas fa-chevron-left fa-lg"></i>
                         </div>
                     </div>
                 </div>
-                <!-- Add Arrows
-                <div class="arrow-container">
-                    <div class="swiper-button-next is-pulled-right">
-                        <i class="fas fa-chevron-right fa-lg"></i>
-                    </div>
-                    <div class="swiper-button-prev">
-                        <i class="fas fa-chevron-left fa-lg"></i>
-                    </div>
-                </div>
-                -->
             </div>
             <div class="column is-three-fifths product-order">
                 <div class="title is-size-4-touch is-size-3-desktop">
@@ -140,13 +142,22 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores reiciendis vel nisi, expedita ex, aperiam illo explicabo adipisci, praesentium, incidunt sequi possimus aut error illum accusamus fugiat perferendis consequatur eaque.</p>
                     </div>
                     <button id="showMore" class="is-size-6 button is-fullwidth is-medium is-light product-show">
-                        <p>Show More &nbsp;<i class="fal fa-angle-down fa-lg"></i></p>
+                        <p>Lihat lebih lengkap &nbsp;<i class="fal fa-angle-down fa-lg"></i></p>
                     </button>
                     <button id="showLess" class="is-size-6 button is-fullwidth is-medium is-light product-show is-hidden">
-                        <p>Show Less &nbsp;<i class="fal fa-angle-up fa-lg"></i></p>
+                        <p>Sembunyikan &nbsp;<i class="fal fa-angle-up fa-lg"></i></p>
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="title is-size-4 product-else">Produk lainnya :</div>
+        <div class="columns is-multiline is-centered is-mobile">
+            <?php include("product.php") ?>
+            <?php include("product.php") ?>
+            <?php include("product.php") ?>
+            <?php include("product.php") ?>
+            <?php include("product.php") ?>
+            <?php include("product.php") ?>
         </div>
     </div>
 </section>
@@ -160,24 +171,26 @@
 <link rel="stylesheet" type="text/css" href="../css/jquery.loupe.css" />
 
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('#currentImg').loupe({
             'default_zoom': 100,
-            'max_size' : 600,
-            'default_size' : 200,
-            'loupe_toggle_time' : 'fast',
+            'max_size': 600,
+            'default_size': 200,
+            'loupe_toggle_time': 'fast',
         });
     });
+
     function zoomImgin() {
         //$('#loupe-0').remove();
         //$('#loupe_overlay-0').remove();
         $('#currentImg').loupe({
             'default_zoom': 100,
-            'max_size' : 600,
-            'default_size' : 200,
-            'loupe_toggle_time' : 'fast',
+            'max_size': 600,
+            'default_size': 200,
+            'loupe_toggle_time': 'fast',
         });
     }
+
     function zoomImgouts() {
         var elem = document.getElementById('loupe-0');
         elem.parentNode.removeChild(elem);
@@ -187,6 +200,7 @@
         document.getElementById('loupe-0').remove();
         document.getElementById('loupe_overlay-0').remove();
     }*/
+
 </script>
 
 <!-- SweetAlert2 -->
@@ -222,6 +236,7 @@
         $('#showMore').removeClass('is-hidden');
         $('#productSpec').addClass('product-showless');
     })
+
 </script>
 
 <!-- Swiper JS -->
