@@ -121,3 +121,28 @@
     background-color: #ff502f;
     color: #fff;
 }
+
+.product-info .title {
+    margin-bottom: .8rem !important;
+    margin-left: 1rem !important;
+}
+
+.product-info .product-spec {
+    margin-left: 1rem;
+    margin-top: .5rem;
+}
+
+.product-showless {
+    max-height: 12rem;
+    overflow: hidden;
+}
+
+.product-show {
+    margin-top: .5rem;
+    opacity: 0.5;
+    transition: .2s;
+}
+
+.product-show:hover {
+    opacity: 1;
+}

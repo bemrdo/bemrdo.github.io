@@ -131,14 +131,20 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <div class="title is-size-5 is-marginless has-text-link">&nbsp; <i class="far fa-clipboard-list"></i>&nbsp; <strong>Informasi Produk:</strong></div>
+                    <div class="title is-size-6 is-marginless has-text-link"><i class="far fa-clipboard-list"></i>&nbsp; <strong>Informasi Produk :</strong></div>
                     <hr class="has-background-link is-marginless">
-                    <div class="is-size-6">
+                    <div class="is-size-6 product-spec product-showless" id="productSpec">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores reiciendis vel nisi, expedita ex, aperiam illo explicabo adipisci, praesentium, incidunt sequi possimus aut error illum accusamus fugiat perferendis consequatur eaque.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores reiciendis vel nisi, expedita ex, aperiam illo explicabo adipisci, praesentium, incidunt sequi possimus aut error illum accusamus fugiat perferendis consequatur eaque.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores reiciendis vel nisi, expedita ex, aperiam illo explicabo adipisci, praesentium, incidunt sequi possimus aut error illum accusamus fugiat perferendis consequatur eaque.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores reiciendis vel nisi, expedita ex, aperiam illo explicabo adipisci, praesentium, incidunt sequi possimus aut error illum accusamus fugiat perferendis consequatur eaque.</p>
                     </div>
+                    <button id="showMore" class="is-size-6 button is-fullwidth is-medium is-light product-show">
+                        <p>Show More &nbsp;<i class="fal fa-angle-down fa-lg"></i></p>
+                    </button>
+                    <button id="showLess" class="is-size-6 button is-fullwidth is-medium is-light product-show is-hidden">
+                        <p>Show Less &nbsp;<i class="fal fa-angle-up fa-lg"></i></p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -205,6 +211,17 @@
     }
 
     document.getElementById("url").innerHTML = window.location.href;
+
+    $('#showMore').click(function() {
+        $('#showMore').addClass('is-hidden');
+        $('#showLess').removeClass('is-hidden');
+        $('#productSpec').removeClass('product-showless');
+    })
+    $('#showLess').click(function() {
+        $('#showLess').addClass('is-hidden');
+        $('#showMore').removeClass('is-hidden');
+        $('#productSpec').addClass('product-showless');
+    })
 </script>
 
 <!-- Swiper JS -->
