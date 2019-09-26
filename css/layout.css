@@ -52,7 +52,7 @@ button, input, select, textarea {
     color: hsl(48, 100%, 67%);
 }
 
-.mobile-view a.cart, .mobile-view a.notif {
+.mobile-view a.cart, .mobile-view a.notif, .mobile-view a.wishlist {
     align-items: center;
     display: flex;
 }
@@ -108,11 +108,12 @@ a.navbar-item + a.navbar-item {
 .cart-cost {
     color: #e84118;
     font-weight: bold;
+    line-height: 2rem;
 }
 
-.cart-var {
+.cart-total {
     color: hsl(0, 0%, 65%);
-    font-size: 0.75rem;
+    font-size: .75rem;
     font-weight: normal;
 }
 
@@ -120,6 +121,7 @@ a.navbar-item + a.navbar-item {
     padding: 5px;
     padding-left: 8px;
     line-height: 2.5;
+    margin-bottom: 1rem;
 }
 
 .cart-stock-ready {

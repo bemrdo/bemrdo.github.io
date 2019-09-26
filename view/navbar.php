@@ -75,6 +75,7 @@
                         <span class="has-badge-rounded has-badge-warning" data-badge="5">
                             <i class="far fa-shopping-cart fa-lg"></i>
                         </span>
+                        <span><strong>&nbsp; Keranjang</strong></span>
                     </a>
 
                     <div class="navbar-dropdown is-right">
@@ -87,8 +88,8 @@
                                         Nama Product disini panjang ini lebih panjang lagi
                                     </span>
                                     <br>
-                                    <span class="cart-var">
-                                        Variasi: putih hitam belang
+                                    <span class="cart-total">
+                                        Total : 2 pack
                                     </span>
                                 </p>
                                 <p class="cart-item">
@@ -98,10 +99,6 @@
                                     <br>
                                     <span class="cart-cost">
                                         Rp. 120.000.000
-                                    </span>
-                                    <br>
-                                    <span>
-                                        2 barang
                                     </span>
                                 </p>
                             </a>
@@ -113,8 +110,8 @@
                                         Nama Product disini panjang ini lebih panjang lagi
                                     </span>
                                     <br>
-                                    <span class="cart-var">
-                                        Variasi: putih hitam belang
+                                    <span class="cart-total">
+                                        Total : 2 pack
                                     </span>
                                 </p>
                                 <p class="cart-item">
@@ -124,10 +121,6 @@
                                     <br>
                                     <span class="cart-cost">
                                         Rp. 120.000.000
-                                    </span>
-                                    <br>
-                                    <span>
-                                        2 barang
                                     </span>
                                 </p>
                             </a>
@@ -150,6 +143,7 @@
                         <span class="has-badge-rounded has-badge-warning" data-badge="5">
                             <i class="far fa-bell fa-lg"></i>
                         </span>
+                        <span><strong>&nbsp; Notifikasi</strong></span>
                     </a>
 
                     <div class="navbar-dropdown is-right">

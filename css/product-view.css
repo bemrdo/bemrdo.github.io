@@ -97,7 +97,7 @@
 }
 
 .tooltip.is-tooltip-multiline::before {
-    min-width: 15rem !important;
+    min-width: 8rem !important;
 }
 
 /* detail */
@@ -112,10 +112,6 @@
     padding-top: .4rem;
     padding-bottom: .4rem;
     margin-right: .4rem;
-}
-
-.is-hpaddingright {
-    padding-right: 0;
 }
 
 .is-vpaddingless {
@@ -155,4 +151,17 @@
 .product-else {
     margin-top: 2rem;
     margin-bottom: .4rem;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    text-align: center;
+    font-weight: bold;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
 }

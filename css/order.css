@@ -1,0 +1,20 @@
+.section-order {
+    padding-top: 5rem;
+}
+
+.card {
+    border-radius: 8px;
+}
+
+.hr-title {
+    margin: 1rem 0;
+    height: 4px;
+}
+
+.p-l-15 {
+    padding-left: 1.5rem;
+}
+
+.order-product {
+    padding-top: 0rem;
+}

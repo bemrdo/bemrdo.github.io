@@ -6,22 +6,6 @@
 <link rel="stylesheet" href="../css/product-view.css">
 <link rel="stylesheet" href="../css/bulma-tooltip.min.css">
 
-<style>
-    input[type="number"] {
-        -webkit-appearance: textfield;
-        -moz-appearance: textfield;
-        appearance: textfield;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-    }
-
-</style>
-
 <section class="section">
     <div class="container">
         <div class="product-path">
@@ -73,7 +57,9 @@
                 </div>
                 <div class="is-size-6 product-stock is-paddingless">
                     <p>
-                        <span class="is-hidden-touch is-hidden-desktop-only"><strong>88</strong> Terjual &nbsp; &#124; &nbsp;</span><span class="is-hidden-widescreen"><strong>88</strong> Terjual<br></span><strong>3</strong> Terpesan dari <strong>4</strong> Tersedia &nbsp;<span class="has-text-centered tooltip is-tooltip-warning is-tooltip-bottom is-tooltip-multiline" data-tooltip="Terjual adalah jumlah barang yang telah sukses terjual. Terpesan adalah jumlah barang yang saat ini terpesan (batas 24 jam sejak dipesan) dari stok barang yang Tersedia saat ini."><i class="fa fa-info-circle"></i></span>&nbsp;
+                        <span class="">Stok : &nbsp;<strong>88</strong> pack</span>&nbsp;
+                        <span class="tooltip has-text-centered is-tooltip-warning is-tooltip-right is-tooltip-multiline" data-tooltip="Stok barang yang tersedia saat ini.">
+                            <i class="fa fa-info-circle"></i></span>&nbsp;
                         <span>
                             <a class="button is-small is-info is-outlined btn-copy" onclick="copyTC('#url')">
                                 <span class="icon is-small">
@@ -95,15 +81,15 @@
                         <p>Jumlah</p>
                         <div class="field has-addons">
                             <div class="control">
-                                <button class="button is-warning" onclick="document.querySelector('#item-count').stepDown()">
+                                <button id="countCheckUp" class="button is-warning count-checkmin" onclick="document.querySelector('#item-count').stepDown()">
                                     <i class="far fa-minus"></i>
                                 </button>
                             </div>
                             <div class="control">
-                                <input class="input is-warning is-outlined" type="number" min="1" max="9" step="1" value="1" id="item-count">
+                                <input class="input is-warning is-outlined" type="number" min="0" max="9" step="1" value="1" id="item-count">
                             </div>
                             <div class="control">
-                                <button class="button is-warning" onclick="document.querySelector('#item-count').stepUp()">
+                                <button id="countCheckDown" class="button is-warning count-checkmax" onclick="document.querySelector('#item-count').stepUp()">
                                     <i class="far fa-plus"></i>
                                 </button>
                             </div>
@@ -117,20 +103,15 @@
                     </div>
                 </div>
                 <div class="columns is-mobile">
-                    <div class="column is-vpaddingless is-hpaddingright is-narrow">
-                        <button class="button is-medium is-info">
-                            <strong>
-                                <p><i class="far fa-bookmark"></i>&nbsp; Wishlist</p>
-                            </strong>
-                        </button>
-                    </div>
-                    <div class="column is-vpaddingless is-narrow">
-                        <button class="button is-medium is-success">
-                            <strong>
-                                <p><i class="fas fa-cart-plus"></i>&nbsp; Pesan Sekarang</p>
-                            </strong>
-                        </button>
-                    </div>
+                    <a href="order.php">
+                        <div class="column is-vpaddingless is-narrow">
+                            <button class="button is-medium is-success">
+                                <strong>
+                                    <p><i class="fas fa-cart-plus"></i>&nbsp; Pesan Sekarang</p>
+                                </strong>
+                            </button>
+                        </div>
+                    </a>
                 </div>
                 <div class="product-info">
                     <div class="title is-size-6 is-marginless has-text-link"><i class="far fa-clipboard-list"></i>&nbsp; <strong>Informasi Produk :</strong></div>
@@ -237,6 +218,27 @@
         $('#productSpec').addClass('product-showless');
     })
 
+    $('#countCheckUp').click(function() {
+        if ($('#item-count').attr('value') > $('#item-count').attr('min')) {
+            $('.count-checkmin').prop('disabled', false);
+        } else {
+            $('.count-checkmin').prop('disabled', true);
+        }
+        if ($('#item-count').attr('value') < $('#item-count').attr('max')) {
+            $('.count-checkmax').prop('disabled', false);
+        }
+    })
+
+    $('#countCheckDown').click(function() {
+        if ($('#item-count').attr('value') < $('#item-count').attr('max')) {
+            $('.count-checkmax').prop('disabled', false);
+        } else {
+            $('.count-checkmax').prop('disabled', true);
+        }
+        if ($('#item-count').attr('value') > $('#item-count').attr('min')) {
+            $('.count-checkmin').prop('disabled', false);
+        }
+    })
 </script>
 
 <!-- Swiper JS -->
@@ -283,5 +285,4 @@
 </script>
 
 <?php include("footer.php") ?>
-
 <?php include("end.php") ?>
