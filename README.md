@@ -1,4 +1,3 @@
-# Tiara-Web
-In progress making view of e-commerce web
+# KlikVoting
 
-try to get first commit
+Public Gate to access klikvoting.web.id
