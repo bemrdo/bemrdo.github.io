@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="icon" href="images/logo-day-one.png" type="image/png">
     <style>
         /* ======================================== */
         /* 1. Global & Variabel CSS (Tema)          */
@@ -169,7 +170,18 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--dark-color);
+            /* ▼▼▼ CSS BARU UNTUK GAMBAR DAN TEKS LOGO NAVBAR ▼▼▼ */
+            display: flex; /* Menggunakan flexbox untuk penempatan gambar dan teks */
+            align-items: center; /* Pusatkan vertikal */
+            gap: 10px; /* Jarak antara gambar dan teks */
         }
+        
+        .navbar .logo img {
+            height: 35px; /* Sesuaikan tinggi logo di navbar */
+            width: auto;
+            vertical-align: middle; /* Memastikan gambar rata tengah dengan teks jika tidak pakai flex */
+        }
+        /* ▲▲▲ AKHIR CSS BARU ▲▲▲ */
         
         .navbar .nav-links a {
             margin-left: 25px;
@@ -331,7 +343,8 @@
         }
 
         .price-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem; /* Menyesuaikan ukuran h3 emoji/teks */
+            margin-bottom: 15px;
         }
         
         /* **PERUBAHAN LAYOUT HARGA** */
@@ -346,7 +359,7 @@
             font-size: 2.2rem;
             font-weight: 700;
             color: var(--primary-color);
-            line-height: 1.2;
+            line-height: 1.2; /* Atur line-height untuk harga yg multi-baris */
         }
         
         .price-card .price small { /* Style untuk "/proyek" */
@@ -570,11 +583,22 @@
         }
         
         .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-color);
+            /* ▼▼▼ CSS BARU UNTUK GAMBAR DAN TEKS LOGO FOOTER ▼▼▼ */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Pusatkan logo dan teks di footer */
+            gap: 10px; /* Jarak antara gambar dan teks */
+            font-size: 1.5rem; /* Mengembalikan ukuran font teks logo */
+            font-weight: 700; /* Mengembalikan ketebalan font teks logo */
+            color: var(--dark-color); /* Mengembalikan warna teks logo */
             margin-bottom: 15px;
         }
+
+        .footer-logo img {
+            height: 40px; /* Sesuaikan tinggi logo di footer */
+            width: auto;
+        }
+        /* ▲▲▲ AKHIR CSS BARU ▲▲▲ */
         
         .footer-desc {
             max-width: 450px;
@@ -685,7 +709,10 @@
 
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">Project Day One</a>
+            <a href="#" class="logo">
+                <img src="images/logo-day-one.png" alt="Project Day One Logo">
+                Project Day One
+            </a>
             <div class="nav-links">
                 <a href="#benefits">Layanan</a>
                 <a href="#pricing">Harga</a>
@@ -697,7 +724,7 @@
 
     <header class="hero" id="home">
         <div class="container">
-            <h1>Website Anda Seharusnya Menghasilkan,<br>Bukan Sekadar Tampil.</h1>
+            <h1>Website Anda Seharusnya Menghasilkan, Bukan Sekadar Tampil.</h1>
             <p>
                 Saya membantu bisnis dan UKM bertransformasi digital dengan website yang fungsional, cepat, dan mudah dikelola—<strong>tanpa ribet.</strong>
             </p>
@@ -948,7 +975,10 @@
 
     <footer>
         <div class="container">
-            <div class="footer-logo">Project Day One</div>
+            <div class="footer-logo">
+                <img src="images/logo-day-one.png" alt="Project Day One Logo">
+                Project Day One
+            </div>
             <p class="footer-desc">
                 Developer web yang berfokus pada solusi fungsional dan modern untuk membantu bisnis tumbuh.
             </p>
