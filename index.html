@@ -101,8 +101,6 @@
 
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out;
-            /* Kita akan tambahkan via JS nanti, tapi untuk sekarang kita set manual */
-            /* Untuk simplisitas, kita set di elemen penting */
         }
         
         /* ======================================== */
@@ -117,6 +115,9 @@
             border-radius: 50px;
             font-size: 1rem;
             transition: all 0.3s ease;
+            cursor: pointer; /* Tambahkan cursor pointer */
+            border: none; /* Untuk kasus jika ini adalah <button> */
+            text-align: center;
         }
 
         .btn:hover {
@@ -182,7 +183,6 @@
             animation-fill-mode: both;
         }
 
-        /* Aksen 'Swoosh' dari referensi */
         .hero::before {
             content: '';
             position: absolute;
@@ -236,7 +236,8 @@
         /* ======================================== */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            /* **PERUBAHAN:** Mengubah ke 3 kolom agar pas 6 poin */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
@@ -344,7 +345,6 @@
             margin: 0 auto;
         }
         
-        /* Garis vertikal di tengah */
         .process-timeline::after {
             content: '';
             position: absolute;
@@ -363,7 +363,6 @@
             width: 50%;
         }
 
-        /* Lingkaran di timeline */
         .process-item::after {
             content: '';
             position: absolute;
@@ -377,7 +376,6 @@
             z-index: 1;
         }
 
-        /* Item Kiri */
         .process-item.left {
             left: 0;
             text-align: right;
@@ -389,7 +387,6 @@
             right: -12px;
         }
 
-        /* Item Kanan */
         .process-item.right {
             left: 50%;
         }
@@ -503,9 +500,9 @@
             resize: vertical;
         }
         
+        /* **PERUBAHAN:** Pastikan tombol WA di form-group terakhir full-width */
         .contact-form .btn {
-            border: none;
-            cursor: pointer;
+            width: 100%; 
         }
 
         /* ======================================== */
@@ -559,15 +556,24 @@
         /* 13. Responsive (Media Queries)           */
         /* ======================================== */
         @media (min-width: 769px) {
+            /* **PERUBAHAN:** 2 kolom untuk pricelist di tablet */
             .pricing-grid {
-                /* 2 kolom di tablet, 4 di desktop */
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* **PERUBAHAN:** 3 kolom untuk benefits di tablet */
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         
-        @media (min-width: 992px) {
-            .pricing-grid {
-                grid-template-columns: repeat(4, 1fr);
+        /* **PERUBAHAN:** Menghapus media query 992px untuk pricing */
+        /* Media query 992px sudah tidak diperlukan untuk pricing grid */
+
+        @media (max-width: 991px) {
+             /* Pastikan benefits jadi 2 kolom di tablet kecil */
+            .benefits-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
         }
 
@@ -576,7 +582,7 @@
             h2 { font-size: 2rem; }
 
             .navbar .nav-links {
-                display: none; /* Simplifikasi, bisa diganti burger menu */
+                display: none;
             }
 
             .hero {
@@ -588,7 +594,7 @@
             }
 
             .process-timeline::after {
-                left: 10px; /* Pindahkan timeline ke kiri */
+                left: 10px;
             }
             .process-item {
                 width: 100%;
@@ -608,6 +614,11 @@
             }
             #contact h2, #contact p {
                 text-align: center;
+            }
+
+            /* **PERUBAHAN:** Pastikan info kontak di atas form di mobile */
+            .contact-wrapper .contact-info {
+                order: -1; /* Pindahkan ke atas */
             }
         }
 
@@ -669,6 +680,16 @@
                     <p>Update konten, blog, atau produk kapan saja (untuk paket CMS).</p>
                 </div>
                 <div class="benefit-card fade-in-up">
+                    <div class="icon">📈</div>
+                    <h3>Optimasi SEO Dasar</h3>
+                    <p>Struktur website yang disukai Google agar lebih mudah ditemukan di pencarian.</p>
+                </div>
+                <div class="benefit-card fade-in-up">
+                    <div class="icon">🔒</div>
+                    <h3>Keamanan Terjamin (SSL)</h3>
+                    <p>Website aman dengan enkripsi SSL (HTTPS) untuk melindungi data pengunjung.</p>
+                </div>
+                 <div class="benefit-card fade-in-up">
                     <div class="icon">🛡️</div>
                     <h3>Dukungan Teknis Penuh</h3>
                     <p>Tidur nyenyak. Anda mendapatkan garansi dan dukungan teknis pasca-peluncuran.</p>
@@ -807,7 +828,7 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in-up">
+                 <div class="testimonial-card fade-in-up">
                     <p class="quote">"Website company profile kami sekarang terlihat jauh lebih profesional dan modern. Terima kasih, Project Day One!"</p>
                     <div class="testimonial-author">
                         <img src="https://via.placeholder.com/100" alt="Foto Klien 3">
@@ -827,22 +848,22 @@
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h2>Siap Membawa Bisnis Anda ke Level Berikutnya?</h2>
-                    <p>Mari diskusikan ide Anda. Saya tidak sabar untuk membantu Anda online. Isi formulir di samping atau hubungi saya langsung via WhatsApp untuk respon lebih cepat.</p>
-                    <br>
-                    <a href="https://wa.me/6287762804369" class="btn">Chat via WhatsApp</a>
-                </div>
+                    <p>Mari diskusikan ide Anda. Saya tidak sabar untuk membantu Anda online. Isi formulir di samping untuk mengirimkan detail, lalu klik tombol WhatsApp untuk memulai chat.</p>
+                    </div>
                 
-                <form class="contact-form">
+                <form class="contact-form" id="contact-form">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Nama Lengkap Anda" required>
+                        <input type="text" id="form-name" name="name" placeholder="Nama Lengkap Anda" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Email Aktif" required>
+                        <input type="email" id="form-email" name="email" placeholder="Email Aktif" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Jelaskan kebutuhan Anda..." required></textarea>
+                        <textarea id="form-message" name="message" placeholder="Jelaskan kebutuhan Anda..." required></textarea>
                     </div>
-                    <button type="submit" class="btn">Kirim Pesan</button>
+                    <div class="form-group">
+                        <a id="wa-button" class="btn">Kirim & Chat via WhatsApp</a>
+                    </div>
                 </form>
             </div>
         </div>
@@ -862,7 +883,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
                 <a href="#" target="_blank" title="Github">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </a>
             </div>
             <div class="footer-contact">
@@ -874,6 +895,32 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('wa-button').addEventListener('click', function(e) {
+            e.preventDefault(); // Mencegah <a> tag pindah halaman
+            
+            // Ambil nilai dari form
+            var name = document.getElementById('form-name').value;
+            var email = document.getElementById('form-email').value;
+            var message = document.getElementById('form-message').value;
+            
+            // Validasi simpel
+            if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+                alert('Harap isi semua field (Nama, Email, dan Kebutuhan Anda) sebelum mengirim.');
+                return;
+            }
+            
+            // Format teks untuk URL WhatsApp (spasi jadi %20, baris baru jadi %0A)
+            var waText = `Hi, aku ${name}..%0A%0AAku ingin ${message}.%0A%0ABisa juga hubungi aku melalui email: ${email}`;
+            
+            // Buat URL lengkap
+            var waUrl = `https://wa.me/6287762804369?text=${waText}`;
+            
+            // Buka di tab baru
+            window.open(waUrl, '_blank');
+        });
+    </script>
 
 </body>
 </html>
