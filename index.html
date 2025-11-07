@@ -15,7 +15,8 @@
         /* ======================================== */
         :root {
             --bg-color: #f4f7f6;
-            --primary-color: #32ff7e; /* Vibrant Green (dari referensi) */
+            /* **PERUBAHAN WARNA UTAMA** */
+            --primary-color: #3A5A40; /* Sebelumnya: #32ff7e */
             --dark-color: #222;
             --light-text: #555;
             --card-bg: #ffffff;
@@ -110,19 +111,21 @@
             display: inline-block;
             padding: 12px 28px;
             background: var(--primary-color);
-            color: var(--dark-color);
+            /* **PERUBAHAN WARNA TEKS TOMBOL** */
+            color: #ffffff; /* Ganti jadi putih agar kontras dengan hijau tua */
             font-weight: 700;
             border-radius: 50px;
             font-size: 1rem;
             transition: all 0.3s ease;
-            cursor: pointer; /* Tambahkan cursor pointer */
-            border: none; /* Untuk kasus jika ini adalah <button> */
+            cursor: pointer;
+            border: none;
             text-align: center;
         }
 
         .btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(49, 255, 126, 0.4);
+            /* **PERUBAHAN BAYANGAN TOMBOL** */
+            box-shadow: 0 8px 20px rgba(58, 90, 64, 0.4); /* Disesuaikan dengan hijau tua */
         }
         
         /* ======================================== */
@@ -183,6 +186,7 @@
             animation-fill-mode: both;
         }
 
+        /* **PERUBAHAN Aksen 'Swoosh'** */
         .hero::before {
             content: '';
             position: absolute;
@@ -191,7 +195,7 @@
             width: 700px;
             height: 700px;
             background: var(--primary-color);
-            opacity: 0.15;
+            opacity: 0.1; /* Dibuat lebih tipis agar tidak terlalu dominan */
             border-radius: 50%;
             filter: blur(100px);
             z-index: -1;
@@ -236,7 +240,6 @@
         /* ======================================== */
         .benefits-grid {
             display: grid;
-            /* **PERUBAHAN:** Mengubah ke 3 kolom agar pas 6 poin */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
@@ -265,7 +268,7 @@
         /* ======================================== */
         .pricing-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Default 1 kolom di mobile */
+            grid-template-columns: 1fr; 
             gap: 30px;
         }
         
@@ -309,7 +312,7 @@
         .price-card ul {
             list-style: none;
             margin-top: 20px;
-            flex-grow: 1; /* Bikin list mengisi ruang */
+            flex-grow: 1; 
         }
         
         .price-card ul li {
@@ -320,7 +323,7 @@
         }
         
         .price-card ul li::before {
-            content: '✔'; /* Ganti dengan SVG jika mau */
+            content: '✔'; 
             color: var(--primary-color);
             position: absolute;
             left: 0;
@@ -500,7 +503,6 @@
             resize: vertical;
         }
         
-        /* **PERUBAHAN:** Pastikan tombol WA di form-group terakhir full-width */
         .contact-form .btn {
             width: 100%; 
         }
@@ -556,22 +558,15 @@
         /* 13. Responsive (Media Queries)           */
         /* ======================================== */
         @media (min-width: 769px) {
-            /* **PERUBAHAN:** 2 kolom untuk pricelist di tablet */
             .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            /* **PERUBAHAN:** 3 kolom untuk benefits di tablet */
             .benefits-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         
-        /* **PERUBAHAN:** Menghapus media query 992px untuk pricing */
-        /* Media query 992px sudah tidak diperlukan untuk pricing grid */
-
         @media (max-width: 991px) {
-             /* Pastikan benefits jadi 2 kolom di tablet kecil */
             .benefits-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
@@ -615,13 +610,10 @@
             #contact h2, #contact p {
                 text-align: center;
             }
-
-            /* **PERUBAHAN:** Pastikan info kontak di atas form di mobile */
             .contact-wrapper .contact-info {
-                order: -1; /* Pindahkan ke atas */
+                order: -1;
             }
         }
-
     </style>
 </head>
 <body>
@@ -912,7 +904,7 @@
             }
             
             // Format teks untuk URL WhatsApp (spasi jadi %20, baris baru jadi %0A)
-            var waText = `Hi, aku ${name}..%0A%0AAku ingin ${message}.%0A%0ABisa juga hubungi aku melalui email: ${email}`;
+            var waText = `Hi, aku ${name}..%0A%0A${message}.%0A%0ABisa juga hubungi aku melalui email: ${email}`;
             
             // Buat URL lengkap
             var waUrl = `https://wa.me/6287762804369?text=${waText}`;
