@@ -1,5 +1,879 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Redirecting to KlikVoting Web App</title>
-<meta http-equiv="refresh" content="0; URL=https://d10e-118-99-92-120.ap.ngrok.io/">
-<link rel="canonical" href="https://d10e-118-99-92-120.ap.ngrok.io/">
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Day One - Jasa Pembuatan Website Profesional</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ======================================== */
+        /* 1. Global & Variabel CSS (Tema)          */
+        /* ======================================== */
+        :root {
+            --bg-color: #f4f7f6;
+            --primary-color: #32ff7e; /* Vibrant Green (dari referensi) */
+            --dark-color: #222;
+            --light-text: #555;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* ======================================== */
+        /* 2. Animasi Keyframes                     */
+        /* ======================================== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+            /* Kita akan tambahkan via JS nanti, tapi untuk sekarang kita set manual */
+            /* Untuk simplisitas, kita set di elemen penting */
+        }
+        
+        /* ======================================== */
+        /* 3. Utility & Tombol (CTA)                */
+        /* ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary-color);
+            color: var(--dark-color);
+            font-weight: 700;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(49, 255, 126, 0.4);
+        }
+        
+        /* ======================================== */
+        /* 4. Navigasi / Header                     */
+        /* ======================================== */
+        .navbar {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .navbar .nav-links a {
+            margin-left: 25px;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+        
+        /* ======================================== */
+        /* 5. Hero Section                          */
+        /* ======================================== */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            max-width: 700px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 25px 0;
+            animation: fadeInUp 0.8s ease-out 0.2s;
+            animation-fill-mode: both;
+        }
+
+        .hero .btn {
+            animation: fadeInUp 0.8s ease-out 0.4s;
+            animation-fill-mode: both;
+        }
+
+        /* Aksen 'Swoosh' dari referensi */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: var(--primary-color);
+            opacity: 0.15;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+        }
+
+        /* ======================================== */
+        /* 6. Klien (Social Proof)                  */
+        /* ======================================== */
+        #clients {
+            background: var(--card-bg);
+            padding: 40px 0;
+        }
+
+        #clients h3 {
+            font-size: 1rem;
+            text-align: center;
+            color: var(--light-text);
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .client-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .client-logos img {
+            height: 40px;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        
+        .client-logos img:hover {
+            opacity: 1;
+        }
+
+        /* ======================================== */
+        /* 7. Manfaat & Fitur                       */
+        /* ======================================== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-card .icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* ======================================== */
+        /* 8. Pricelist / Katalog Layanan           */
+        /* ======================================== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Default 1 kolom di mobile */
+            gap: 30px;
+        }
+        
+        .price-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .price-card h3 {
+            font-size: 1.8rem;
+        }
+        
+        .price-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+        
+        .price-card .price-tag {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .price-card .price-card-desc {
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin-top: 20px;
+            flex-grow: 1; /* Bikin list mengisi ruang */
+        }
+        
+        .price-card ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            color: var(--light-text);
+        }
+        
+        .price-card ul li::before {
+            content: '✔'; /* Ganti dengan SVG jika mau */
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+        
+        .price-card .btn {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* ======================================== */
+        /* 9. Alur Kerja (Proses)                   */
+        /* ======================================== */
+        #process {
+            background: var(--card-bg);
+        }
+        
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Garis vertikal di tengah */
+        .process-timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            opacity: 0.2;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .process-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        /* Lingkaran di timeline */
+        .process-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--primary-color);
+            border: 4px solid var(--bg-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Item Kiri */
+        .process-item.left {
+            left: 0;
+            text-align: right;
+        }
+        .process-item.left::before {
+            right: 30px;
+        }
+        .process-item.left::after {
+            right: -12px;
+        }
+
+        /* Item Kanan */
+        .process-item.right {
+            left: 50%;
+        }
+        .process-item.right::before {
+            left: 30px;
+        }
+        .process-item.right::after {
+            left: -8px;
+        }
+        
+        .process-content {
+            padding: 20px 30px;
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+        }
+        
+        .process-content h3 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+        .process-content p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* ======================================== */
+        /* 10. Testimoni                            */
+        /* ======================================== */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .testimonial-card .quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .author-info p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* ======================================== */
+        /* 11. Kontak & CTA Akhir                   */
+        /* ======================================== */
+        #contact {
+            background: var(--dark-color);
+            color: var(--bg-color);
+            border-radius: var(--border-radius);
+            margin: 40px auto;
+        }
+        
+        #contact h2, #contact p {
+            color: #fff;
+            text-align: left;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #333;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .contact-form .btn {
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ======================================== */
+        /* 12. Footer                               */
+        /* ======================================== */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .footer-desc {
+            max-width: 450px;
+            margin: 0 auto 25px auto;
+            font-size: 0.9rem;
+        }
+        
+        .footer-socials {
+            margin-bottom: 25px;
+        }
+        
+        .footer-socials a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-socials a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-copyright {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* ======================================== */
+        /* 13. Responsive (Media Queries)           */
+        /* ======================================== */
+        @media (min-width: 769px) {
+            .pricing-grid {
+                /* 2 kolom di tablet, 4 di desktop */
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .pricing-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+
+            .navbar .nav-links {
+                display: none; /* Simplifikasi, bisa diganti burger menu */
+            }
+
+            .hero {
+                padding-top: 140px;
+                text-align: center;
+            }
+            .hero h1, .hero p {
+                max-width: 100%;
+            }
+
+            .process-timeline::after {
+                left: 10px; /* Pindahkan timeline ke kiri */
+            }
+            .process-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 10px;
+            }
+            .process-item.left, .process-item.right {
+                left: 0;
+                text-align: left;
+            }
+            .process-item.left::after, .process-item.right::after {
+                left: 1px;
+            }
+            
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            #contact h2, #contact p {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Project Day One</a>
+            <div class="nav-links">
+                <a href="#benefits">Layanan</a>
+                <a href="#pricing">Harga</a>
+                <a href="#process">Proses</a>
+                <a href="#contact" class="btn">Kontak Saya</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="container">
+            <h1>Website Anda Seharusnya Menghasilkan, Bukan Sekadar Tampil.</h1>
+            <p>
+                Saya membantu bisnis dan UKM bertransformasi digital dengan website yang fungsional, cepat, dan mudah dikelola—tanpa *ribet*.
+            </p>
+            <a href="#contact" class="btn">Konsultasi Gratis Kebutuhan Anda</a>
+        </div>
+    </header>
+
+    <section id="clients">
+        <div class="container">
+            <h3>Telah Dipercaya oleh:</h3>
+            <div class="client-logos">
+                <img src="https://via.placeholder.com/150x40.png?text=LOGO+KLIEN+1" alt="Logo Klien 1">
+                <img src="https://via.placeholder.com/150x40.png?text=LOGO+KLIEN+2" alt="Logo Klien 2">
+                <img src="https://via.placeholder.com/150x40.png?text=LOGO+KLIEN+3" alt="Logo Klien 3">
+                <img src="https://via.placeholder.com/150x40.png?text=LOGO+KLIEN+4" alt="Logo Klien 4">
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <div class="container">
+            <h2>Anda Tidak Hanya Membeli Kode, Anda Berinvestasi pada Solusi.</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in-up">
+                    <div class="icon">📱</div>
+                    <h3>Desain Responsif Penuh</h3>
+                    <p>Tampil sempurna di perangkat apa pun. Pengunjung senang, konversi pun datang.</p>
+                </div>
+                <div class="benefit-card fade-in-up">
+                    <div class="icon">🚀</div>
+                    <h3>Optimasi Kecepatan</h3>
+                    <p>Website anti-lemot. Google suka, pengunjung pun tidak kabur.</p>
+                </div>
+                <div class="benefit-card fade-in-up">
+                    <div class="icon">⚙️</div>
+                    <h3>Mudah Dikelola Sendiri</h3>
+                    <p>Update konten, blog, atau produk kapan saja (untuk paket CMS).</p>
+                </div>
+                <div class="benefit-card fade-in-up">
+                    <div class="icon">🛡️</div>
+                    <h3>Dukungan Teknis Penuh</h3>
+                    <p>Tidur nyenyak. Anda mendapatkan garansi dan dukungan teknis pasca-peluncuran.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2>Paket Layanan yang Sesuai dengan Kebutuhan Anda</h2>
+            <div class="pricing-grid">
+                
+                <div class="price-card fade-in-up">
+                    <h3>🚀 Landing Page</h3>
+                    <p class="price-card-desc">Promosi produk, event, atau personal branding.</p>
+                    <div class="price"><span class="price-tag">Rp 1.5jt - 2.5jt</span></div>
+                    <ul>
+                        <li>Desain responsif</li>
+                        <li>1 halaman utama + 1 tambahan</li>
+                        <li>Integrasi Form WhatsApp/Email</li>
+                        <li>Optimasi SEO dasar</li>
+                        <li>Google Analytics & Meta Pixel</li>
+                    </ul>
+                    <a href="#contact" class="btn">Pilih Paket</a>
+                </div>
+                
+                <div class="price-card fade-in-up">
+                    <h3>🛍️ Katalog + Admin</h3>
+                    <p class="price-card-desc">Menampilkan produk tanpa transaksi online.</p>
+                    <div class="price"><span class="price-tag">Rp 3.5jt - 5.5jt</span></div>
+                    <ul>
+                        <li>Admin Dashboard (CRUD Produk)</li>
+                        <li>Filter & pencarian produk</li>
+                        <li>SEO friendly & responsif</li>
+                        <li>Integrasi WhatsApp Order</li>
+                        <li>Galeri & detail produk</li>
+                    </ul>
+                    <a href="#contact" class="btn">Pilih Paket</a>
+                </div>
+
+                <div class="price-card fade-in-up">
+                    <h3>🏢 Company Profile</h3>
+                    <p class="price-card-desc">Tampilan profesional yang mudah dikelola.</p>
+                    <div class="price"><span class="price-tag">Rp 5jt - 8jt</span></div>
+                    <ul>
+                        <li>Halaman lengkap (Blog, Galeri, dll)</li>
+                        <li>Admin Dashboard (CMS)</li>
+                        <li>Integrasi Google Maps & Testimoni</li>
+                        <li>SEO & struktur data schema</li>
+                        <li>Backup otomatis (opsional)</li>
+                    </ul>
+                    <a href="#contact" class="btn">Pilih Paket</a>
+                </div>
+                
+                <div class="price-card fade-in-up">
+                    <h3>⚙️ Sistem Internal</h3>
+                    <p class="price-card-desc">Manajemen data, absensi, CRM, dll.</p>
+                    <div class="price"><span class="price-tag">Mulai dari Rp 15jt</span></div>
+                    <ul>
+                        <li>Login multi-role (Admin, Staff)</li>
+                        <li>Dashboard interaktif</li>
+                        <li>Export data (Excel/PDF)</li>
+                        <li>Fitur kustom (laporan, notifikasi)</li>
+                        <li>Dokumentasi teknis</li>
+                    </ul>
+                    <a href="#contact" class="btn">Pilih Paket</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <section id="process">
+        <div class="container">
+            <h2>Proses Kerja Kita Sederhana dan Terstruktur</h2>
+            <div class="process-timeline">
+                <div class="process-item left">
+                    <div class="process-content">
+                        <h3>1. Diskusi & Analisis</h3>
+                        <p>Memahami visi, target audiens, dan kebutuhan fitur Anda.</p>
+                    </div>
+                </div>
+                <div class="process-item right">
+                    <div class="process-content">
+                        <h3>2. Desain & Prototyping</h3>
+                        <p>Pembuatan wireframe dan mockup UI/UX sebelum coding.</p>
+                    </div>
+                </div>
+                <div class="process-item left">
+                    <div class="process-content">
+                        <h3>3. Development</h3>
+                        <p>Menerjemahkan desain yang disetujui menjadi website fungsional.</p>
+                    </div>
+                </div>
+                <div class="process-item right">
+                    <div class="process-content">
+                        <h3>4. Testing & Launch</h3>
+                        <p>Memastikan semua fitur bebas bug dan website siap diluncurkan.</p>
+                    </div>
+                </div>
+                 <div class="process-item left">
+                    <div class="process-content">
+                        <h3>5. Support & Panduan</h3>
+                        <p>Memberikan panduan penggunaan (CMS) dan garansi teknis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Apa Kata Mereka yang Sudah Go-Live?</h2>
+            <div class="testimonial-grid">
+                
+                <div class="testimonial-card fade-in-up">
+                    <p class="quote">"Prosesnya cepat dan hasilnya memuaskan, traffic kami naik! Aris sangat kooperatif dan memahami kebutuhan kami."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/100" alt="Foto Klien 1">
+                        <div class="author-info">
+                            <h4>Nama Klien 1</h4>
+                            <p>CEO, Perusahaan Klien</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in-up">
+                    <p class="quote">"Sistem internal yang dibuat sangat membantu operasional harian. Jauh lebih efisien daripada cara manual sebelumnya."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/100" alt="Foto Klien 2">
+                        <div class="author-info">
+                            <h4>Nama Klien 2</h4>
+                            <p>Manajer Operasional, PT. Maju</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in-up">
+                    <p class="quote">"Website company profile kami sekarang terlihat jauh lebih profesional dan modern. Terima kasih, Project Day One!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/100" alt="Foto Klien 3">
+                        <div class="author-info">
+                            <h4>Nama Klien 3</h4>
+                            <p>Owner, Bisnis Lokal</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Siap Membawa Bisnis Anda ke Level Berikutnya?</h2>
+                    <p>Mari diskusikan ide Anda. Saya tidak sabar untuk membantu Anda online. Isi formulir di samping atau hubungi saya langsung via WhatsApp untuk respon lebih cepat.</p>
+                    <br>
+                    <a href="https://wa.me/6287762804369" class="btn">Chat via WhatsApp</a>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Nama Lengkap Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Aktif" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Jelaskan kebutuhan Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Project Day One</div>
+            <p class="footer-desc">
+                Developer web yang berfokus pada solusi fungsional dan modern untuk membantu bisnis tumbuh.
+            </p>
+            <div class="footer-socials">
+                <a href="https://instagram.com/aris.snj" target="_blank" title="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="#" target="_blank" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="#" target="_blank" title="Github">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+            </div>
+            <div class="footer-contact">
+                <p>Email: <a href="mailto:bemr.do@gmail.com">bemr.do@gmail.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/6287762804369">+62 877-6280-4369</a></p>
+            </div>
+            <p class="footer-copyright">
+                © 2025 Project Day One. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

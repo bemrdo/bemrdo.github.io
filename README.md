@@ -1,3 +1,3 @@
-# KlikVoting
+Main Page
 
-Public Gate to access klikvoting.web.id
+Public Gate IO
