@@ -15,8 +15,7 @@
         /* ======================================== */
         :root {
             --bg-color: #f4f7f6;
-            /* **PERUBAHAN WARNA UTAMA** */
-            --primary-color: #3A5A40; /* Sebelumnya: #32ff7e */
+            --primary-color: #3A5A40;
             --dark-color: #222;
             --light-text: #555;
             --card-bg: #ffffff;
@@ -72,6 +71,14 @@
             font-size: 1.5rem;
             margin-bottom: 15px;
         }
+        
+        h4 { /* Tambahan untuk title "What included" */
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
 
         p {
             color: var(--light-text);
@@ -97,6 +104,19 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* **ANIMASI BARU UNTUK HERO** */
+        @keyframes hero-swoosh {
+            0% {
+                transform: translateX(-50%) translateY(-50%) rotate(-20deg);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-50%) rotate(-25deg) scale(1.05);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(-20deg);
+            }
+        }
+
         .fade-in {
             animation: fadeIn 1s ease-in-out;
         }
@@ -112,8 +132,7 @@
             display: inline-block;
             padding: 12px 28px;
             background: var(--primary-color);
-            /* **PERUBAHAN WARNA TEKS TOMBOL** */
-            color: #ffffff; /* Ganti jadi putih agar kontras dengan hijau tua */
+            color: #ffffff;
             font-weight: 700;
             border-radius: 50px;
             font-size: 1rem;
@@ -125,8 +144,7 @@
 
         .btn:hover {
             transform: scale(1.05);
-            /* **PERUBAHAN BAYANGAN TOMBOL** */
-            box-shadow: 0 8px 20px rgba(58, 90, 64, 0.4); /* Disesuaikan dengan hijau tua */
+            box-shadow: 0 8px 20px rgba(58, 90, 64, 0.4);
         }
         
         /* ======================================== */
@@ -160,7 +178,7 @@
         }
 
         .navbar .nav-links .btn {
-            color: #ffffff; /* Ganti jadi putih agar kontras dengan hijau tua */
+            color: #ffffff;
         }
         
         /* ======================================== */
@@ -176,6 +194,8 @@
         .hero h1 {
             max-width: 700px;
             animation: fadeInUp 0.8s ease-out;
+            position: relative; /* Agar di atas pseudo-element */
+            z-index: 2;
         }
         
         .hero p {
@@ -184,14 +204,17 @@
             margin: 25px 0;
             animation: fadeInUp 0.8s ease-out 0.2s;
             animation-fill-mode: both;
+            position: relative;
+            z-index: 2;
         }
 
         .hero .btn {
             animation: fadeInUp 0.8s ease-out 0.4s;
             animation-fill-mode: both;
+            position: relative;
+            z-index: 2;
         }
 
-        /* **PERUBAHAN Aksen 'Swoosh'** */
         .hero::before {
             content: '';
             position: absolute;
@@ -200,11 +223,26 @@
             width: 700px;
             height: 700px;
             background: var(--primary-color);
-            opacity: 0.1; /* Dibuat lebih tipis agar tidak terlalu dominan */
+            opacity: 0.1;
             border-radius: 50%;
             filter: blur(100px);
-            z-index: -1;
+            z-index: 1; /* Di belakang konten, di atas bg */
         }
+        
+        /* **STYLE ANIMASI HERO BARU** */
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 400px;
+            background: linear-gradient(90deg, rgba(58, 90, 64, 0.1), rgba(58, 90, 64, 0));
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(-20deg);
+            z-index: 0; /* Paling belakang */
+            animation: hero-swoosh 15s ease-in-out infinite;
+        }
+
 
         /* ======================================== */
         /* 6. Klien (Social Proof)                  */
@@ -296,27 +334,34 @@
             font-size: 1.8rem;
         }
         
+        /* **PERUBAHAN LAYOUT HARGA** */
         .price-card .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            display: flex;
+            align-items: baseline; /* Rata bawah */
+            gap: 8px;
             margin: 10px 0;
         }
         
-        .price-card .price-tag {
-            font-size: 1.2rem;
+        .price-card .price span { /* Sebelumnya .price-tag */
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .price-card .price small { /* Style untuk "/proyek" */
+            font-size: 1rem;
             font-weight: 600;
-            color: var(--dark-color);
+            color: var(--light-text);
         }
         
         .price-card .price-card-desc {
             font-size: 0.95rem;
-            margin-bottom: 25px;
+            margin-bottom: 0; /* Dihapus margin bawahnya */
         }
 
         .price-card ul {
             list-style: none;
-            margin-top: 20px;
+            margin-top: 15px; /* Didekatkan ke title */
             flex-grow: 1; 
         }
         
@@ -392,7 +437,7 @@
             right: 30px;
         }
         .process-item.left::after {
-            right: -14px;
+            right: -14px; /* Disesuaikan sedikit */
         }
 
         .process-item.right {
@@ -402,7 +447,7 @@
             left: 30px;
         }
         .process-item.right::after {
-            left: -14px;
+            left: -14px; /* Disesuaikan sedikit */
         }
         
         .process-content {
@@ -458,7 +503,7 @@
         .author-info h4 {
             font-size: 1rem;
             font-weight: 700;
-            margin: 0;
+            margin: 0; /* Reset margin h4 di sini */
         }
         .author-info p {
             font-size: 0.9rem;
@@ -574,6 +619,17 @@
         @media (max-width: 991px) {
             .benefits-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        /* **BREAKPOINT BARU UNTUK 3 KOLOM PRICING** */
+        @media (min-width: 1200px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            /* Target kartu ke-4 dan pusatkan */
+            .price-card:nth-child(4) {
+                grid-column: 2 / 3; /* Mulai di kolom 2, berakhir sblm 3 */
             }
         }
 
@@ -703,7 +759,11 @@
                 <div class="price-card fade-in-up">
                     <h3>🚀 Landing Page</h3>
                     <p class="price-card-desc">Promosi produk, event, atau personal branding.</p>
-                    <div class="price"><span class="price-tag">Rp 1.5jt - 2.5jt</span></div>
+                    <div class="price">
+                        <span>Rp 1.5jt - 2.5jt</span>
+                        <small>/proyek</small>
+                    </div>
+                    <h4>What included</h4>
                     <ul>
                         <li>Desain responsif</li>
                         <li>1 halaman utama + 1 tambahan</li>
@@ -717,7 +777,11 @@
                 <div class="price-card fade-in-up">
                     <h3>🛍️ Katalog + Admin</h3>
                     <p class="price-card-desc">Menampilkan produk tanpa transaksi online.</p>
-                    <div class="price"><span class="price-tag">Rp 3.5jt - 5.5jt</span></div>
+                    <div class="price">
+                        <span>Rp 3.5jt - 5.5jt</span>
+                        <small>/proyek</small>
+                    </div>
+                    <h4>What included</h4>
                     <ul>
                         <li>Admin Dashboard (CRUD Produk)</li>
                         <li>Filter & pencarian produk</li>
@@ -731,7 +795,11 @@
                 <div class="price-card fade-in-up">
                     <h3>🏢 Company Profile</h3>
                     <p class="price-card-desc">Tampilan profesional yang mudah dikelola.</p>
-                    <div class="price"><span class="price-tag">Rp 5jt - 8jt</span></div>
+                    <div class="price">
+                        <span>Rp 5jt - 8jt</span>
+                        <small>/proyek</small>
+                    </div>
+                    <h4>What included</h4>
                     <ul>
                         <li>Halaman lengkap (Blog, Galeri, dll)</li>
                         <li>Admin Dashboard (CMS)</li>
@@ -745,7 +813,11 @@
                 <div class="price-card fade-in-up">
                     <h3>⚙️ Sistem Internal</h3>
                     <p class="price-card-desc">Manajemen data, absensi, CRM, dll.</p>
-                    <div class="price"><span class="price-tag">Mulai dari Rp 15jt</span></div>
+                    <div class="price">
+                        <span>Mulai dari Rp 15jt</span>
+                        <small>/proyek</small>
+                    </div>
+                    <h4>What included</h4>
                     <ul>
                         <li>Login multi-role (Admin, Staff)</li>
                         <li>Dashboard interaktif</li>
@@ -895,26 +967,20 @@
 
     <script>
         document.getElementById('wa-button').addEventListener('click', function(e) {
-            e.preventDefault(); // Mencegah <a> tag pindah halaman
+            e.preventDefault(); 
             
-            // Ambil nilai dari form
             var name = document.getElementById('form-name').value;
             var email = document.getElementById('form-email').value;
             var message = document.getElementById('form-message').value;
             
-            // Validasi simpel
             if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
                 alert('Harap isi semua field (Nama, Email, dan Kebutuhan Anda) sebelum mengirim.');
                 return;
             }
             
-            // Format teks untuk URL WhatsApp (spasi jadi %20, baris baru jadi %0A)
             var waText = `Hi, aku ${name}..%0A%0A${message}.%0A%0ABisa juga hubungi aku melalui email: ${email}`;
-            
-            // Buat URL lengkap
             var waUrl = `https://wa.me/6287762804369?text=${waText}`;
             
-            // Buka di tab baru
             window.open(waUrl, '_blank');
         });
     </script>
