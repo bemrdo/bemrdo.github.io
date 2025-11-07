@@ -1077,22 +1077,34 @@
     </footer>
 
     <script>
-        document.getElementById('wa-button').addEventListener('click', function(e) {
-            e.preventDefault(); 
-            
-            var name = document.getElementById('form-name').value;
-            var email = document.getElementById('form-email').value;
-            var message = document.getElementById('form-message').value;
-            
-            if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-                alert('Harap isi semua field (Nama, Email, dan Kebutuhan Anda) sebelum mengirim.');
-                return;
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoContainer = document.querySelector('.client-logos');
+            const animateWrapper = document.querySelector('.client-logos-animate');
+
+            if (logoContainer && animateWrapper) {
+                // 1. Buat kloning dari 9 logo aslimu
+                const logoClone = logoContainer.cloneNode(true);
+                // 2. Tambahkan kloning itu ke dalam container animasi
+                animateWrapper.appendChild(logoClone);
             }
-            
-            var waText = `Hi, aku ${name}..%0A%0A${message}.%0A%0ABisa juga hubungi aku melalui email: ${email}`;
-            var waUrl = `https://wa.me/6287762804369?text=${waText}`;
-            
-            window.open(waUrl, '_blank');
+
+            document.getElementById('wa-button').addEventListener('click', function(e) {
+                e.preventDefault(); 
+                
+                var name = document.getElementById('form-name').value;
+                var email = document.getElementById('form-email').value;
+                var message = document.getElementById('form-message').value;
+                
+                if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+                    alert('Harap isi semua field (Nama, Email, dan Kebutuhan Anda) sebelum mengirim.');
+                    return;
+                }
+                
+                var waText = `Hi, aku ${name}..%0A%0A${message}.%0A%0ABisa juga hubungi aku melalui email: ${email}`;
+                var waUrl = `https://wa.me/6287762804369?text=${waText}`;
+                
+                window.open(waUrl, '_blank');
+            });
         });
     </script>
 
