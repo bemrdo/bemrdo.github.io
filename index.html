@@ -124,7 +124,7 @@
                 transform: translateX(0%);
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateX(-50%);
             }
         }
 
@@ -272,7 +272,6 @@
         #clients {
             background: var(--card-bg);
             padding: 40px 0;
-            overflow: hidden;
         }
 
         #clients h3 {
@@ -283,14 +282,23 @@
             margin-bottom: 30px;
         }
         
+        /* --- STYLE BARU UNTUK SLIDER LOGO --- */
+        
+        /* 1. Wrapper untuk masking */
         .client-slider-wrapper {
-            display: flex; /* Memastikan dua .client-logos bersebelahan */
-            width: fit-content; /* Agar melebar sesuai konten */
-            animation: scroll-left 40s linear infinite; /* Atur kecepatan di sini */
-            animation-play-state: running; /* Default running */
+            overflow: hidden; /* Sembunyikan semua yang 'meluber' */
+            position: relative;
         }
 
-        .client-slider-wrapper:hover {
+        /* 2. Container yang bergerak */
+        .client-logos-animate {
+            display: flex; /* Bikin .client-logos dan kloningnya bersebelahan */
+            width: max-content; /* Lebar otomatis berdasarkan konten */
+            animation: scroll-left 40s linear infinite; /* Kecepatan di sini */
+            animation-play-state: running;
+        }
+
+        .client-logos-animate:hover {
             animation-play-state: paused; /* Pause saat hover */
         }
 
@@ -299,7 +307,7 @@
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 40px;
             flex-shrink: 0;
         }
         
@@ -791,35 +799,20 @@
     <section id="clients">
         <div class="container">
             <h3>Telah Dipercaya oleh:</h3>
-            <div class="client-logos">
-                <img src="images/klien-ecovis.svg" alt="Logo Klien 1">
-                <img src="images/klien-hadiprana.png" alt="Logo Klien 2">
-                <img src="images/klien-optima.svg" alt="Logo Klien 3">
-                <img src="images/klien-primehub.png" alt="Logo Klien 4">
-            </div>
-            <div class="client-slider-wrapper">
-                <div class="client-logos">
-                    <img src="images/klien-ecovis.svg" alt="Logo Klien 1">
-                    <img src="images/klien-hadiprana.png" alt="Logo Klien 2">
-                    <img src="images/klien-optima.svg" alt="Logo Klien 3">
-                    <img src="images/klien-primehub.png" alt="Logo Klien 4">
-                    <img src="images/klien-sinar-bahari.png" alt="Logo Klien 5">
-                    <img src="images/klien-mka.png" alt="Logo Klien 6">
-                    <img src="images/klien-btn-properti.svg" alt="Logo Klien 7">
-                    <img src="images/klien-mmp.svg" alt="Logo Klien 8">
-                    <img src="images/klien-harmoni.png" alt="Logo Klien 9">
-                </div>
-                <div class="client-logos">
-                    <img src="images/klien-ecovis.svg" alt="Logo Klien 1">
-                    <img src="images/klien-hadiprana.png" alt="Logo Klien 2">
-                    <img src="images/klien-optima.svg" alt="Logo Klien 3">
-                    <img src="images/klien-primehub.png" alt="Logo Klien 4">
-                    <img src="images/klien-sinar-bahari.png" alt="Logo Klien 5">
-                    <img src="images/klien-mka.png" alt="Logo Klien 6">
-                    <img src="images/klien-btn-properti.svg" alt="Logo Klien 7">
-                    <img src="images/klien-mmp.svg" alt="Logo Klien 8">
-                    <img src="images/klien-harmoni.png" alt="Logo Klien 9">
-                </div>
+            <div class="client-slider-wrapper"> 
+                <div class="client-logos-animate">
+                    <div class="client-logos">
+                        <img src="images/klien-ecovis.svg" alt="Logo Klien 1">
+                        <img src="images/klien-hadiprana.png" alt="Logo Klien 2">
+                        <img src="images/klien-optima.svg" alt="Logo Klien 3">
+                        <img src="images/klien-primehub.png" alt="Logo Klien 4">
+                        <img src="images/klien-sinar-bahari.png" alt="Logo Klien 5">
+                        <img src="images/klien-mka.png" alt="Logo Klien 6">
+                        <img src="images/klien-btn-properti.svg" alt="Logo Klien 7">
+                        <img src="images/klien-mmp.svg" alt="Logo Klien 8">
+                        <img src="images/klien-harmoni.png" alt="Logo Klien 9">
+                    </div>
+                </div> 
             </div>
         </div>
     </section>
