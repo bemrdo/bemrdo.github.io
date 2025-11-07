@@ -118,6 +118,16 @@
             }
         }
 
+        /* **ANIMASI KLIEN SLIDER** */
+        @keyframes scroll-left { /* Keyframe baru untuk slider logo */
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
         .fade-in {
             animation: fadeIn 1s ease-in-out;
         }
@@ -262,6 +272,7 @@
         #clients {
             background: var(--card-bg);
             padding: 40px 0;
+            overflow: hidden;
         }
 
         #clients h3 {
@@ -272,22 +283,37 @@
             margin-bottom: 30px;
         }
         
+        .client-slider-wrapper {
+            display: flex; /* Memastikan dua .client-logos bersebelahan */
+            width: fit-content; /* Agar melebar sesuai konten */
+            animation: scroll-left 40s linear infinite; /* Atur kecepatan di sini */
+            animation-play-state: running; /* Default running */
+        }
+
+        .client-slider-wrapper:hover {
+            animation-play-state: paused; /* Pause saat hover */
+        }
+
         .client-logos {
             display: flex;
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
+            flex-shrink: 0;
         }
         
         .client-logos img {
             height: 40px;
+            max-width: 150px;
             opacity: 0.5;
             transition: opacity 0.3s ease;
+            filter: grayscale(100%);
         }
         
         .client-logos img:hover {
             opacity: 1;
+            filter: grayscale(0%);
         }
 
         /* ======================================== */
@@ -724,6 +750,14 @@
             .contact-wrapper .contact-info {
                 order: -1;
             }
+
+            .client-logos {
+                gap: 20px; /* Jarak logo lebih kecil di mobile */
+            }
+            .client-logos img {
+                height: 30px;
+                max-width: 100px;
+            }
         }
     </style>
 </head>
@@ -762,6 +796,30 @@
                 <img src="images/klien-hadiprana.png" alt="Logo Klien 2">
                 <img src="images/klien-optima.svg" alt="Logo Klien 3">
                 <img src="images/klien-primehub.png" alt="Logo Klien 4">
+            </div>
+            <div class="client-slider-wrapper">
+                <div class="client-logos">
+                    <img src="images/klien-ecovis.svg" alt="Logo Klien 1">
+                    <img src="images/klien-hadiprana.png" alt="Logo Klien 2">
+                    <img src="images/klien-optima.svg" alt="Logo Klien 3">
+                    <img src="images/klien-primehub.png" alt="Logo Klien 4">
+                    <img src="images/klien-sinar-bahari.png" alt="Logo Klien 5">
+                    <img src="images/klien-mka.png" alt="Logo Klien 6">
+                    <img src="images/klien-btn-properti.svg" alt="Logo Klien 7">
+                    <img src="images/klien-mmp.svg" alt="Logo Klien 8">
+                    <img src="images/klien-harmoni.png" alt="Logo Klien 9">
+                </div>
+                <div class="client-logos">
+                    <img src="images/klien-ecovis.svg" alt="Logo Klien 1">
+                    <img src="images/klien-hadiprana.png" alt="Logo Klien 2">
+                    <img src="images/klien-optima.svg" alt="Logo Klien 3">
+                    <img src="images/klien-primehub.png" alt="Logo Klien 4">
+                    <img src="images/klien-sinar-bahari.png" alt="Logo Klien 5">
+                    <img src="images/klien-mka.png" alt="Logo Klien 6">
+                    <img src="images/klien-btn-properti.svg" alt="Logo Klien 7">
+                    <img src="images/klien-mmp.svg" alt="Logo Klien 8">
+                    <img src="images/klien-harmoni.png" alt="Logo Klien 9">
+                </div>
             </div>
         </div>
     </section>
