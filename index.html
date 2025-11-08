@@ -352,9 +352,21 @@
         }
         
         .benefit-card .icon {
-            font-size: 2rem;
-            color: var(--primary-color);
             margin-bottom: 15px;
+            /* Jika kamu ingin ikonnya di tengah (misal di mobile) */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px; /* Memberi tinggi agar ikon punya ruang */
+            width: 40px; /* Memberi lebar */
+        }
+
+        .benefit-card .icon img { /* Tambahkan atau modifikasi ini */
+            width: 100%; /* Agar gambar ikon mengisi ruang parent-nya (.icon) */
+            height: 100%; /* Mengisi tinggi */
+            object-fit: contain; /* Memastikan gambar tidak terpotong, tapi pas di dalam */
+            /* Jika ikonmu punya warna lain dan tidak perlu diwarnai ulang, ini sudah cukup */
+            /* Untuk ikon roketmu yang hijau, ini sudah bagus */
         }
 
         /* ======================================== */
